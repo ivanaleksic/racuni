@@ -35,9 +35,9 @@ if ($_SESSION['session'] > $_SESSION['inactive']) {
             <div id="header" style="background-color:#D8D8D8;height:40px;line-height:40px;">
                 <h2 style="margin-bottom:0;">Title</h2>
             </div>
-
+            <!
             <div id="menu" style="background-color:#E8E8E8;height:480px;width:350px;float:left;text-align: left;">
-                <br />
+                <!-- comenytar -->
                 <ul type="none">
                     <li>
                         <input type="radio">Plaćeni računi</input>
