@@ -1,0 +1,516 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workbench progressCount="49" version="2.0">
+<workbenchAdvisor/>
+<window height="686" maximized="true" width="647" x="392" y="26">
+<fastViewData fastViewLocation="1024"/>
+<perspectiveBar>
+<itemSize x="160"/>
+</perspectiveBar>
+<coolbarLayout>
+<coolItem id="group.file" itemType="typeGroupMarker"/>
+<coolItem id="org.eclipse.ui.workbench.file" itemType="typeToolBarContribution" x="132" y="30"/>
+<coolItem id="additions" itemType="typeGroupMarker"/>
+<coolItem id="org.eclipse.debug.ui.launchActionSet" itemType="typeToolBarContribution" x="140" y="30"/>
+<coolItem id="org.eclipse.search.searchActionSet" itemType="typeToolBarContribution" x="82" y="30"/>
+<coolItem id="com.aptana.ui.globalActionSet" itemType="typeToolBarContribution" x="188" y="30"/>
+<coolItem id="org.eclipse.ui.edit.text.actionSet.presentation" itemType="typeToolBarContribution" x="96" y="30"/>
+<coolItem id="group.nav" itemType="typeGroupMarker"/>
+<coolItem id="org.eclipse.ui.workbench.navigate" itemType="typeToolBarContribution" x="84" y="30"/>
+<coolItem id="group.editor" itemType="typeGroupMarker"/>
+<coolItem id="com.aptana.editor.text" itemType="typeToolBarContribution" x="-1" y="-1"/>
+<coolItem id="com.aptana.editor.css" itemType="typeToolBarContribution" x="-1" y="-1"/>
+<coolItem id="org.eclipse.ui.DefaultTextEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
+<coolItem id="com.aptana.editor.php" itemType="typeToolBarContribution" x="-1" y="-1"/>
+<coolItem id="com.aptana.editor.html" itemType="typeToolBarContribution" x="-1" y="-1"/>
+<coolItem id="group.help" itemType="typeGroupMarker"/>
+<coolItem id="org.eclipse.ui.workbench.help" itemType="typeToolBarContribution" x="-1" y="-1"/>
+</coolbarLayout>
+<page aggregateWorkingSetId="Aggregate for window 1402669981645" focus="true" label="Workspace - Web">
+<editors>
+<editorArea activeWorkbook="DefaultEditorWorkbook">
+<info part="DefaultEditorWorkbook">
+<folder appearance="1" expanded="2">
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
+<part id="1"/>
+<part id="2"/>
+<part id="3"/>
+<part id="4"/>
+<part id="5"/>
+<part id="6"/>
+<part id="7"/>
+<part id="8"/>
+<part id="9"/>
+<part id="10"/>
+<part id="11"/>
+<part id="12"/>
+<part id="13"/>
+<part id="14"/>
+<part id="15"/>
+<part id="16"/>
+<part id="17"/>
+<part id="18"/>
+<part id="19"/>
+<part id="20"/>
+<part id="21"/>
+<part id="22"/>
+<part id="23"/>
+</presentation>
+</folder>
+</info>
+</editorArea>
+<editor id="com.aptana.editor.php" name="insert.php" partName="insert.php" title="insert.php" tooltip="/opt/lampp/htdocs/Racuni/insert.php" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" uri="file:/opt/lampp/htdocs/Racuni/insert.php"/>
+<editorState selectionHorizontalPixel="0" selectionLength="39" selectionOffset="2029" selectionTopPixel="408"/>
+</editor>
+<editor id="com.aptana.editor.css" name="racuni.css" partName="racuni.css | Racuni" title="racuni.css | Racuni" tooltip="/opt/lampp/htdocs/Racuni/racuni.css" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" uri="file:/opt/lampp/htdocs/Racuni/racuni.css"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="89" selectionTopPixel="0"/>
+</editor>
+<editor id="com.aptana.editor.php" name="welcome.php" partName="welcome.php" title="welcome.php" tooltip="/opt/lampp/htdocs/ci/application/controllers/welcome.php" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" uri="file:/opt/lampp/htdocs/ci/application/controllers/welcome.php"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="188" selectionTopPixel="0"/>
+</editor>
+<editor id="com.aptana.editor.php" name="site.php" partName="site.php" title="site.php" tooltip="/opt/lampp/htdocs/ci/application/controllers/site.php" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" uri="file:/opt/lampp/htdocs/ci/application/controllers/site.php"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="176" selectionTopPixel="0"/>
+</editor>
+<editor id="com.aptana.editor.php" name="routes.php" partName="routes.php" title="routes.php" tooltip="/opt/lampp/htdocs/ci/application/config/routes.php" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" uri="file:/opt/lampp/htdocs/ci/application/config/routes.php"/>
+<editorState selectionHorizontalPixel="0" selectionLength="3" selectionOffset="1427" selectionTopPixel="413"/>
+</editor>
+<editor id="com.aptana.editor.html" name="index.html" partName="index.html" title="index.html" tooltip="/opt/lampp/htdocs/ci/application/index.html" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" uri="file:/opt/lampp/htdocs/ci/application/index.html"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="0"/>
+</editor>
+<editor id="com.aptana.editor.html" name="index.html" partName="index.html" title="index.html" tooltip="/opt/lampp/htdocs/ci/application/views/index.html" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" uri="file:/opt/lampp/htdocs/ci/application/views/index.html"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="114" selectionTopPixel="0"/>
+</editor>
+<editor id="com.aptana.editor.php" name="welcome_message.php" partName="welcome_message.php | views" title="welcome_message.php | views" tooltip="/opt/lampp/htdocs/ci/application/views/welcome_message.php" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" uri="file:/opt/lampp/htdocs/ci/application/views/welcome_message.php"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="312" selectionTopPixel="0"/>
+</editor>
+<editor id="com.aptana.editor.php" name="racuni.php" partName="racuni.php | views" title="racuni.php | views" tooltip="/opt/lampp/htdocs/ci/application/views/racuni.php" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" uri="file:/opt/lampp/htdocs/ci/application/views/racuni.php"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="83" selectionTopPixel="0"/>
+</editor>
+<editor id="com.aptana.editor.css" name="style.css" partName="style.css" title="style.css" tooltip="/opt/lampp/htdocs/ci/application/views/style.css" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" uri="file:/opt/lampp/htdocs/ci/application/views/style.css"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="118" selectionTopPixel="0"/>
+</editor>
+<editor id="com.aptana.editor.php" name="welcome_message.php" partName="welcome_message.php | application" title="welcome_message.php | application" tooltip="/opt/lampp/htdocs/ci/application/welcome_message.php" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" uri="file:/opt/lampp/htdocs/ci/application/welcome_message.php"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="0"/>
+</editor>
+<editor id="com.aptana.editor.php" name="routes.php" partName="routes.php" title="routes.php" tooltip="/opt/lampp/htdocs/CodeIgniter/application/config/routes.php" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" uri="file:/opt/lampp/htdocs/CodeIgniter/application/config/routes.php"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="442"/>
+</editor>
+<editor id="com.aptana.editor.php" name="welcome.php" partName="welcome.php" title="welcome.php" tooltip="/opt/lampp/htdocs/CodeIgniter/application/controllers/welcome.php" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" uri="file:/opt/lampp/htdocs/CodeIgniter/application/controllers/welcome.php"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="333" selectionTopPixel="97"/>
+</editor>
+<editor id="com.aptana.editor.php" name="welcome_message.php" partName="welcome_message.php" title="welcome_message.php" tooltip="/opt/lampp/htdocs/CodeIgniter/application/views/welcome_message.php" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" uri="file:/opt/lampp/htdocs/CodeIgniter/application/views/welcome_message.php"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="98" selectionTopPixel="0"/>
+</editor>
+<editor id="com.aptana.editor.php" name="racuni.php" partName="racuni.php" title="racuni.php" tooltip="/opt/lampp/htdocs/CodeIgniter/application/views/racuni.php" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" uri="file:/opt/lampp/htdocs/CodeIgniter/application/views/racuni.php"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="152" selectionTopPixel="0"/>
+</editor>
+<editor id="com.aptana.editor.css" name="racuni.css" partName="racuni.css | views" title="racuni.css | views" tooltip="/opt/lampp/htdocs/CodeIgniter/application/views/racuni.css" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" uri="file:/opt/lampp/htdocs/CodeIgniter/application/views/racuni.css"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="121" selectionTopPixel="0"/>
+</editor>
+<editor id="com.aptana.editor.php" name="upis.php" partName="upis.php" title="upis.php" tooltip="/opt/lampp/htdocs/CodeIgniter/application/models/upis.php" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" uri="file:/opt/lampp/htdocs/CodeIgniter/application/models/upis.php"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="37" selectionTopPixel="0"/>
+</editor>
+<editor id="com.aptana.editor.php" name="insert_upl.php" partName="insert_upl.php" title="insert_upl.php" tooltip="/opt/lampp/htdocs/Racuni/insert_upl.php" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" uri="file:/opt/lampp/htdocs/Racuni/insert_upl.php"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="293" selectionTopPixel="0"/>
+</editor>
+<editor id="com.aptana.editor.php" name="insert_zad.php" partName="insert_zad.php" title="insert_zad.php" tooltip="/opt/lampp/htdocs/Racuni/insert_zad.php" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" uri="file:/opt/lampp/htdocs/Racuni/insert_zad.php"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1022" selectionTopPixel="0"/>
+</editor>
+<editor id="com.aptana.editor.php" name="racuni.php" partName="racuni.php" title="racuni.php" tooltip="/home/ivan/Documents/Aptana Studio 3 Workspace/Racuni/racuni.php" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" uri="file:/home/ivan/Documents/Aptana%20Studio%203%20Workspace/Racuni/racuni.php"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="0"/>
+</editor>
+<editor id="com.aptana.editor.html" name="racuni.html" partName="racuni.html" title="racuni.html" tooltip="/opt/lampp/htdocs/Racuni/racuni.html" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" uri="file:/opt/lampp/htdocs/Racuni/racuni.html"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1985" selectionTopPixel="943"/>
+</editor>
+<editor id="org.eclipse.ui.DefaultTextEditor" name="file2220084786651196727efs" partName="file2220084786651196727efs" title="file2220084786651196727efs" tooltip="/opt/lampp/htdocs/Racuni/.metadata/.plugins/org.eclipse.core.filesystem/filecache/1402868555381/file2220084786651196727efs" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" uri="file:/opt/lampp/htdocs/Racuni/.metadata/.plugins/org.eclipse.core.filesystem/filecache/1402868555381/file2220084786651196727efs"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="0"/>
+</editor>
+<editor id="com.aptana.editor.php" name="populate.php" partName="populate.php" title="populate.php" tooltip="/opt/lampp/htdocs/Racuni/populate.php" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" uri="file:/opt/lampp/htdocs/Racuni/populate.php"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="393" selectionTopPixel="0"/>
+</editor>
+</editors>
+<views>
+<view id="org.eclipse.ui.navigator.ProjectExplorer" partName="Project Explorer">
+<viewState CommonNavigator.LINKING_ENABLED="1" org.eclipse.ui.navigator.resources.workingSets.showTopLevelWorkingSets="0"/>
+</view>
+<view id="com.aptana.snippets.ui.views.SnippetsView" partName="Snippets">
+<viewState/>
+</view>
+<view id="com.aptana.terminal.views.terminal" partName="Terminal"/>
+<view id="com.aptana.samples.ui.SamplesView" partName="Samples">
+<viewState/>
+</view>
+<view id="org.eclipse.ui.views.ProblemView" partName="Problems">
+<viewState PRIMARY_SORT_FIELD="org.eclipse.ui.ide.severityAndDescriptionField" categoryGroup="org.eclipse.ui.ide.severity" markerContentGenerator="org.eclipse.ui.ide.problemsGenerator" partName="Problems">
+<columnWidths org.eclipse.ui.ide.locationField="105" org.eclipse.ui.ide.markerType="105" org.eclipse.ui.ide.pathField="140" org.eclipse.ui.ide.resourceField="105" org.eclipse.ui.ide.severityAndDescriptionField="350"/>
+<visible IMemento.internal.id="org.eclipse.ui.ide.severityAndDescriptionField"/>
+<visible IMemento.internal.id="org.eclipse.ui.ide.resourceField"/>
+<visible IMemento.internal.id="org.eclipse.ui.ide.pathField"/>
+<visible IMemento.internal.id="org.eclipse.ui.ide.locationField"/>
+<visible IMemento.internal.id="org.eclipse.ui.ide.markerType"/>
+</viewState>
+</view>
+<view id="org.eclipse.ui.console.ConsoleView" partName="Console">
+<viewState/>
+</view>
+<view id="com.aptana.explorer.view" partName="App Explorer">
+<viewState CommonNavigator.LINKING_ENABLED="0" GitChangedFilesFilterEnabled="" activeProject="Racuni">
+<project name="Racuni">&#x0A;<selection>&#x0A;<element path="/Racuni"/>
+</selection>
+</project>
+</viewState>
+</view>
+<view id="org.eclipse.ui.views.ContentOutline" partName="Outline">
+<viewState/>
+</view>
+</views>
+<perspectives activePart="org.eclipse.ui.navigator.ProjectExplorer" activePerspective="com.aptana.ui.WebPerspective">
+<perspective editorAreaTrimState="2" editorAreaVisible="1" fixed="0" version="0.016">
+<descriptor class="com.aptana.ui.internal.WebPerspectiveFactory" id="com.aptana.ui.WebPerspective" label="Web"/>
+<alwaysOnActionSet id="com.aptana.browser.actionSet"/>
+<alwaysOnActionSet id="com.aptana.ruby.debug.ui.RubyDebugActionSet"/>
+<alwaysOnActionSet id="org.eclipse.ui.cheatsheets.actionSet"/>
+<alwaysOnActionSet id="org.eclipse.search.searchActionSet"/>
+<alwaysOnActionSet id="org.eclipse.ui.edit.text.actionSet.convertLineDelimitersTo"/>
+<alwaysOnActionSet id="org.eclipse.ui.actionSet.keyBindings"/>
+<alwaysOnActionSet id="org.eclipse.ui.actionSet.openFiles"/>
+<alwaysOnActionSet id="com.aptana.editor.common.presentation"/>
+<alwaysOnActionSet id="org.eclipse.debug.ui.launchActionSet"/>
+<alwaysOnActionSet id="org.eclipse.debug.ui.breakpointActionSet"/>
+<alwaysOnActionSet id="com.aptana.js.debug.ui.actionSet"/>
+<alwaysOnActionSet id="org.eclipse.ui.NavigateActionSet"/>
+<alwaysOnActionSet id="org.eclipse.ui.edit.text.actionSet.presentation"/>
+<alwaysOnActionSet id="com.aptana.ui.globalActionSet"/>
+<alwaysOnActionSet id="com.aptana.terminal.actionSet"/>
+<show_view_action id="com.aptana.browser.views.webbrowser"/>
+<show_view_action id="com.aptana.explorer.view"/>
+<show_view_action id="org.eclipse.ui.navigator.ProjectExplorer"/>
+<show_view_action id="com.aptana.ui.io.remoteview"/>
+<show_view_action id="org.eclipse.ui.views.ContentOutline"/>
+<show_view_action id="com.aptana.samples.ui.SamplesView"/>
+<show_view_action id="com.aptana.snippets.ui.views.SnippetsView"/>
+<show_view_action id="com.aptana.terminal.views.terminal"/>
+<show_view_action id="org.eclipse.ui.console.ConsoleView"/>
+<show_view_action id="org.eclipse.pde.runtime.LogView"/>
+<show_view_action id="org.eclipse.ui.views.ProblemView"/>
+<show_view_action id="org.eclipse.ui.views.TaskList"/>
+<show_view_action id="com.aptana.webserver.ui.view"/>
+<new_wizard_action id="com.aptana.editor.php.NewPHPProjectWizard"/>
+<new_wizard_action id="com.aptana.ui.wizards.NewWebProject"/>
+<new_wizard_action id="com.aptana.ruby.core.ui.rubyProjectWizard"/>
+<new_wizard_action id="com.aptana.ui.wizards.new.file"/>
+<new_wizard_action id="org.eclipse.ui.wizards.new.folder"/>
+<new_wizard_action id="org.eclipse.ui.editors.wizards.UntitledTextFileWizard"/>
+<new_wizard_action id="org.radrails.rails.ui.projectWizard"/>
+<perspective_action id="org.eclipse.debug.ui.DebugPerspective"/>
+<hide_toolbar_item_id id="org.eclipse.ui.edit.text.toggleShowSelectedElementOnly"/>
+<view id="com.aptana.explorer.view"/>
+<view id="org.eclipse.ui.navigator.ProjectExplorer"/>
+<view id="org.eclipse.ui.console.ConsoleView"/>
+<view id="com.aptana.terminal.views.terminal"/>
+<view id="org.eclipse.ui.views.ProblemView"/>
+<view id="org.eclipse.ui.views.ContentOutline"/>
+<view id="com.aptana.samples.ui.SamplesView"/>
+<view id="com.aptana.snippets.ui.views.SnippetsView"/>
+<fastViewBars/>
+<layout>
+<mainWindow>
+<info folder="true" part="left">
+<folder activePageID="org.eclipse.ui.navigator.ProjectExplorer" appearance="2" expanded="2">
+<page content="com.aptana.explorer.view" label="App Explorer"/>
+<page content="org.eclipse.ui.navigator.ProjectExplorer" label="Project Explorer"/>
+<page content="com.aptana.ui.io.remoteview" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
+<part id="1"/>
+</presentation>
+</folder>
+</info>
+<info folder="true" part="stickyFolderRight" ratio="0.7495784" ratioLeft="889" ratioRight="297" relationship="2" relative="left">
+<folder appearance="2" expanded="2">
+<page content="org.eclipse.help.ui.HelpView" label="LabelNotFound"/>
+<page content="org.eclipse.ui.internal.introview" label="LabelNotFound"/>
+<page content="org.eclipse.ui.cheatsheets.views.CheatSheetView" label="LabelNotFound"/>
+</folder>
+</info>
+<info part="org.eclipse.ui.editorss" ratio="0.3580247" ratioLeft="232" ratioRight="416" relationship="2" relative="left"/>
+<info folder="true" part="terminalArea" ratio="0.7488922" ratioLeft="507" ratioRight="170" relationship="4" relative="org.eclipse.ui.editorss">
+<folder activePageID="org.eclipse.ui.console.ConsoleView" appearance="2" expanded="2">
+<page content="org.eclipse.ui.console.ConsoleView" label="Console"/>
+<page content="com.aptana.terminal.views.terminal" label="Terminal"/>
+<page content="org.eclipse.ui.views.ProblemView" label="Problems"/>
+<page content="org.eclipse.pde.runtime.LogView" label="LabelNotFound"/>
+<page content="org.eclipse.ui.views.TaskList" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
+<part id="1"/>
+<part id="2"/>
+</presentation>
+</folder>
+</info>
+<info folder="true" part="org.eclipse.ui.internal.ViewStack@5f6967fd" ratio="0.6396396" ratioLeft="426" ratioRight="240" relationship="4" relative="left">
+<folder activePageID="com.aptana.snippets.ui.views.SnippetsView" appearance="2" expanded="2">
+<page content="org.eclipse.ui.views.ContentOutline" label="Outline"/>
+<page content="com.aptana.samples.ui.SamplesView" label="Samples"/>
+<page content="com.aptana.snippets.ui.views.SnippetsView" label="Snippets"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
+<part id="1"/>
+<part id="2"/>
+</presentation>
+</folder>
+</info>
+</mainWindow>
+</layout>
+</perspective>
+</perspectives>
+<workingSets/>
+<navigationHistory>
+<editors>
+<editor factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" id="com.aptana.editor.php" uri="file:/opt/lampp/htdocs/Racuni/insert_upl.php"/>
+<editor factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" id="com.aptana.editor.html" uri="file:/opt/lampp/htdocs/Racuni/racuni.html"/>
+<editor factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" id="com.aptana.editor.php" uri="file:/opt/lampp/htdocs/Racuni/insert.php"/>
+<editor factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" id="com.aptana.editor.html" uri="file:/opt/lampp/htdocs/Racuni/racun.html"/>
+<editor factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" id="com.aptana.editor.css" uri="file:/opt/lampp/htdocs/Racuni/racuni.css"/>
+<editor factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" id="com.aptana.editor.php" uri="file:/home/ivan/Documents/Aptana%20Studio%203%20Workspace/Racuni/racuni.php"/>
+<editor factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" id="com.aptana.editor.php" uri="file:/opt/lampp/htdocs/Racuni/populate.php"/>
+<editor factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" id="com.aptana.editor.php" uri="file:/opt/lampp/htdocs/Racuni/insert_zad.php"/>
+<editor factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" id="com.aptana.editor.html" uri="file:/opt/lampp/htdocs/Racuni/home.html"/>
+</editors>
+<item historyLabel="racuni.html" index="1">
+<position info="not_deleted" x="255" y="14"/>
+</item>
+<item historyLabel="racun.html" index="3">
+<position/>
+</item>
+<item historyLabel="racuni.html" index="1">
+<position info="not_deleted" x="300" y="16"/>
+</item>
+<item historyLabel="racun.html" index="3">
+<position/>
+</item>
+<item historyLabel="racun.html" index="3">
+<position info="not_deleted" x="348" y="15"/>
+</item>
+<item historyLabel="racuni.php" index="5">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="racun.html" index="3">
+<position info="not_deleted" x="348" y="15"/>
+</item>
+<item historyLabel="racun.html" index="3">
+<position info="not_deleted" x="2522" y="180"/>
+</item>
+<item historyLabel="racuni.html" index="1">
+<position info="not_deleted" x="300" y="16"/>
+</item>
+<item historyLabel="racun.html" index="3">
+<position info="not_deleted" x="3249" y="0"/>
+</item>
+<item historyLabel="populate.php" index="6">
+<position/>
+</item>
+<item historyLabel="insert.php" index="2">
+<position info="not_deleted" x="175" y="0"/>
+</item>
+<item historyLabel="populate.php" index="6">
+<position/>
+</item>
+<item historyLabel="insert.php" index="2">
+<position info="not_deleted" x="175" y="0"/>
+</item>
+<item historyLabel="populate.php" index="6">
+<position info="not_deleted" x="233" y="0"/>
+</item>
+<item historyLabel="racun.html" index="3">
+<position info="not_deleted" x="1745" y="0"/>
+</item>
+<item historyLabel="populate.php" index="6">
+<position/>
+</item>
+<item historyLabel="racun.html" index="3">
+<position info="not_deleted" x="2117" y="0"/>
+</item>
+<item historyLabel="populate.php" index="6">
+<position info="not_deleted" x="632" y="0"/>
+</item>
+<item historyLabel="racun.html" index="3">
+<position info="not_deleted" x="1580" y="0"/>
+</item>
+<item historyLabel="populate.php" index="6">
+<position info="not_deleted" x="465" y="0"/>
+</item>
+<item historyLabel="racun.html" index="3">
+<position info="not_deleted" x="1580" y="0"/>
+</item>
+<item historyLabel="racun.html" index="3">
+<position/>
+</item>
+<item historyLabel="populate.php" index="6">
+<position info="not_deleted" x="465" y="0"/>
+</item>
+<item historyLabel="racun.html" index="3">
+<position/>
+</item>
+<item historyLabel="racun.html" index="3">
+<position info="not_deleted" x="4131" y="0"/>
+</item>
+<item historyLabel="racuni.html" index="1">
+<position info="not_deleted" x="1985" y="0"/>
+</item>
+<item historyLabel="racuni.css | Racuni" index="4">
+<position info="not_deleted" x="89" y="0"/>
+</item>
+<item historyLabel="racun.html" index="3">
+<position info="not_deleted" x="4131" y="0"/>
+</item>
+<item historyLabel="racun.html" index="3">
+<position info="not_deleted" x="4309" y="0"/>
+</item>
+<item historyLabel="insert.php" index="2">
+<position info="not_deleted" x="2029" y="39"/>
+</item>
+<item historyLabel="populate.php" index="6">
+<position info="not_deleted" x="794" y="0"/>
+</item>
+<item historyLabel="insert.php" index="2">
+<position info="not_deleted" x="2029" y="39"/>
+</item>
+<item historyLabel="populate.php" index="6">
+<position info="not_deleted" x="794" y="0"/>
+</item>
+<item historyLabel="populate.php" index="6">
+<position info="not_deleted" x="787" y="0"/>
+</item>
+<item historyLabel="racun.html" index="3">
+<position info="not_deleted" x="4309" y="0"/>
+</item>
+<item historyLabel="populate.php" index="6">
+<position info="not_deleted" x="787" y="0"/>
+</item>
+<item historyLabel="racun.html" index="3">
+<position info="not_deleted" x="1340" y="0"/>
+</item>
+<item historyLabel="populate.php" index="6">
+<position/>
+</item>
+<item historyLabel="insert_upl.php" index="0">
+<position info="not_deleted" x="293" y="0"/>
+</item>
+<item historyLabel="populate.php" index="6">
+<position/>
+</item>
+<item historyLabel="insert.php" index="2">
+<position info="not_deleted" x="2029" y="39"/>
+</item>
+<item historyLabel="insert_zad.php" index="7">
+<position info="not_deleted" x="1022" y="0"/>
+</item>
+<item historyLabel="populate.php" index="6">
+<position/>
+</item>
+<item historyLabel="racun.html" index="3">
+<position info="not_deleted" x="1307" y="0"/>
+</item>
+<item historyLabel="populate.php" index="6">
+<position info="not_deleted" x="393" y="0"/>
+</item>
+<item historyLabel="racun.html" index="3">
+<position info="not_deleted" x="4309" y="0"/>
+</item>
+<item historyLabel="populate.php" index="6">
+<position info="not_deleted" x="393" y="0"/>
+</item>
+<item historyLabel="racun.html" index="3">
+<position info="not_deleted" x="4309" y="0"/>
+</item>
+<item active="true" historyLabel="home.html" index="8">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+</navigationHistory>
+<input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
+</page>
+<workbenchWindowAdvisor/>
+<actionBarAdvisor/>
+<trimLayout>
+<trimArea IMemento.internal.id="128">
+<trimItem IMemento.internal.id="org.eclipse.ui.internal.WorkbenchWindow.topBar"/>
+</trimArea>
+<trimArea IMemento.internal.id="1024">
+<trimItem IMemento.internal.id="org.eclise.ui.internal.FastViewBar"/>
+<trimItem IMemento.internal.id="org.eclipse.jface.action.StatusLineManager"/>
+<trimItem IMemento.internal.id="org.eclipse.ui.internal.progress.ProgressRegion"/>
+</trimArea>
+</trimLayout>
+</window>
+<mruList>
+<file factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" id="com.aptana.editor.php" name="populate.php" tooltip="/opt/lampp/htdocs/Racuni/populate.php">
+<persistable uri="file:/opt/lampp/htdocs/Racuni/populate.php"/>
+</file>
+<file factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" id="org.eclipse.ui.DefaultTextEditor" name="file2220084786651196727efs" tooltip="/opt/lampp/htdocs/Racuni/.metadata/.plugins/org.eclipse.core.filesystem/filecache/1402868555381/file2220084786651196727efs">
+<persistable uri="file:/opt/lampp/htdocs/Racuni/.metadata/.plugins/org.eclipse.core.filesystem/filecache/1402868555381/file2220084786651196727efs"/>
+</file>
+<file factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" id="com.aptana.editor.html" name="racun.html" tooltip="/opt/lampp/htdocs/Racuni/racun.html">
+<persistable uri="file:/opt/lampp/htdocs/Racuni/racun.html"/>
+</file>
+<file factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" id="com.aptana.editor.html" name="racuni.html" tooltip="/opt/lampp/htdocs/Racuni/racuni.html">
+<persistable uri="file:/opt/lampp/htdocs/Racuni/racuni.html"/>
+</file>
+<file factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" id="com.aptana.editor.php" name="racuni.php" tooltip="/opt/lampp/htdocs/Racuni/racuni.php">
+<persistable uri="file:/opt/lampp/htdocs/Racuni/racuni.php"/>
+</file>
+<file factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" id="com.aptana.editor.php" name="insert_zad.php" tooltip="/opt/lampp/htdocs/Racuni/insert_zad.php">
+<persistable uri="file:/opt/lampp/htdocs/Racuni/insert_zad.php"/>
+</file>
+<file factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" id="com.aptana.editor.php" name="insert_upl.php" tooltip="/opt/lampp/htdocs/Racuni/insert_upl.php">
+<persistable uri="file:/opt/lampp/htdocs/Racuni/insert_upl.php"/>
+</file>
+<file factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" id="com.aptana.editor.php" name="upis.php" tooltip="/opt/lampp/htdocs/CodeIgniter/application/models/upis.php">
+<persistable uri="file:/opt/lampp/htdocs/CodeIgniter/application/models/upis.php"/>
+</file>
+<file factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" id="com.aptana.editor.css" name="racuni.css" tooltip="/opt/lampp/htdocs/CodeIgniter/application/views/racuni.css">
+<persistable uri="file:/opt/lampp/htdocs/CodeIgniter/application/views/racuni.css"/>
+</file>
+<file factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" id="com.aptana.editor.php" name="racuni.php" tooltip="/opt/lampp/htdocs/CodeIgniter/application/views/racuni.php">
+<persistable uri="file:/opt/lampp/htdocs/CodeIgniter/application/views/racuni.php"/>
+</file>
+<file factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" id="com.aptana.editor.php" name="welcome_message.php" tooltip="/opt/lampp/htdocs/CodeIgniter/application/views/welcome_message.php">
+<persistable uri="file:/opt/lampp/htdocs/CodeIgniter/application/views/welcome_message.php"/>
+</file>
+<file factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" id="com.aptana.editor.php" name="welcome.php" tooltip="/opt/lampp/htdocs/CodeIgniter/application/controllers/welcome.php">
+<persistable uri="file:/opt/lampp/htdocs/CodeIgniter/application/controllers/welcome.php"/>
+</file>
+<file factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" id="com.aptana.editor.php" name="routes.php" tooltip="/opt/lampp/htdocs/CodeIgniter/application/config/routes.php">
+<persistable uri="file:/opt/lampp/htdocs/CodeIgniter/application/config/routes.php"/>
+</file>
+<file factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" id="com.aptana.editor.php" name="welcome_message.php" tooltip="/opt/lampp/htdocs/ci/application/welcome_message.php">
+<persistable uri="file:/opt/lampp/htdocs/ci/application/welcome_message.php"/>
+</file>
+<file factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" id="com.aptana.editor.php" name="racuni.php" tooltip="/opt/lampp/htdocs/ci/application/racuni.php">
+<persistable uri="file:/opt/lampp/htdocs/ci/application/racuni.php"/>
+</file>
+</mruList>
+</workbench>

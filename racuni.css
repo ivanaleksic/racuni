@@ -1,0 +1,64 @@
+body {
+    font-family:Arial;
+    font-size:11px;
+}
+.label_wide {
+	width:120px;
+	display: inline-block;
+	margin-left:20px;
+}
+.input_small {
+	width:20px;
+	display: inline-block;
+	margin-left:20px;
+}
+.input_big {
+	width:150px;
+	display: inline-block;
+	font-size:12px;
+	margin-left:20px;
+}
+.select_big {
+	width:159px;
+	display: inline-block;
+	font-size:12px;
+	margin-left:20px;
+}
+.ui-datepicker {
+	font-size:11px !important;
+}
+table {
+	border:0;
+	border-collapse: collapse;
+	border-spacing:0;
+	margin:0px;
+	font-size:11px;
+}
+th {
+    background-color:#D8D8D8;
+    padding: 3px;
+    height: 15px;
+}
+tr:nth-of-type(odd) {
+	background-color:#E8E8E8;
+}
+tr:nth-of-type(even) {
+	background-color:#FFFFFF;
+}
+td {
+    padding: 3px;
+}
+
+/*
+	-ms-box-sizing:content-box;
+	-moz-box-sizing:content-box;
+	box-sizing:content-box;
+	-webkit-box-sizing:content-box;
+*/
+
+li {
+    display: flex;
+    justify-content:left;
+    align-content:left;
+    flex-direction:row; /* column | row */
+}

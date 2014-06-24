@@ -1,0 +1,3 @@
+FIND_BAR_DECORATOR_FIND_ENTRIES=\#\n\#Mon Jun 16 00\:55\:51 CEST 2014\n2\=input_small\n1\=input_wide\n0\=input_mid\n
+FIND_BAR_DECORATOR_REPLACE_ENTRIES=\#\n\#Mon Jun 16 00\:55\:51 CEST 2014\n2\=input_small\n1\=input_mid\n0\=input_big\n
+eclipse.preferences.version=1
