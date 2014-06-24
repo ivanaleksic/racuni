@@ -1,13 +1,19 @@
 <?php
 session_start();
 //if (isset($_SESSION['time'])) {
-    $_SESSION['session'] = time() - $_SESSION['time'];
+    /*$_SESSION['session'] = time() - $_SESSION['time'];
     if ($_SESSION['session'] > $_SESSION['inactive']) {
     	$_SESSION['active'] = 0;
         session_destroy();
         header("location:login.php");
-    }
+    }*/
 //}
+include('timeout.php');
+if(is_timeout()){
+    session_destroy();
+    header("location:login.php");
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -57,7 +63,11 @@ session_start();
         }
     </script>
 </head>
-
+<?php function moja_funkcija($parm)
+{
+    return 'Moja funkcija koja se zove '.$parm;
+}
+?>
 <body>
     <div style="float:left;width:400px;">
         <a herf="#" class="btn  btn-success">Button</a>
@@ -73,11 +83,16 @@ session_start();
                 include 'db_connect.php';
                 //query
                 $sql=mysql_query("SELECT id, naziv FROM partneri");
+
                 if(mysql_num_rows($sql)) {
                     $select= '<select id="partner_id" name="partner_id" class="select_big">';
-                    while($rs=mysql_fetch_array($sql)) {
+
+                    /*while( $rs=mysql_fetch_array($sql)) {
                         $select.='<option value='.$rs['id'].'>'.$rs['naziv'].'</option>';
-                    }
+                    }*/
+                    $jj=moja_funkcija('idemo kuci');
+                    echo $jj;
+
                 }
                 $select.='</select>';
                 echo $select;
