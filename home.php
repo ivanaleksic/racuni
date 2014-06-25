@@ -39,7 +39,7 @@ function layout($page_id)
 ?>
 
 <!DOCTYPE html>
-<html lang="sr">
+<html lang="sr" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <!-- Latest compiled and minified CSS -->
@@ -58,13 +58,28 @@ function layout($page_id)
         $(function() {
             $( ".datepicker" ).datepicker({ dateFormat: "yy-mm-dd", changeMonth: true, changeYear: true, yearRange:'-15:+5' }).val()
         })
+        $(window).resize(function(){
+            var height="";
+            height=$(window).height() - 150;
+            $("#content").css('height',height);
+            $("#content").css('max-height',height);
+            $("#sidebar").css('height',height);
+        });
+        $(window).load(function(){
+            var height="";
+            height=$(window).height() - 150;
+            $("#content").css('height',height);
+            $("#content").css('max-height',height);
+            $("#sidebar").css('height',height);
+        });
     </script>
+
 </head>
 
 <body>
 <div id="container" style="position:relative;width:1100px;margin: 20px auto 0;overflow:hidden;">
-    <div id="header" style="background-color:#D8D8D8;line-height:20px;margin:0 auto;padding:6px 12px;text-align: center;">
-        <p>Naslov</p>
+    <div id="header" style="background-color:#D8D8D8;line-height:12px;margin:0 auto;padding:6px 12px;text-align: center;">
+        <p><b>NASLOV IDE OVDE</b></p>
     </div>
 
     <div id="header" style="background-color:#FFFFFF;line-height:20px;margin:0 auto;padding:6px 12px;border:1px solid #D8D8D8;">
@@ -85,7 +100,7 @@ function layout($page_id)
         <a href="home.php?page=uplate" class="btn btn-xs">Uplate</a>
         <a href="home.php?page=partneri" class="btn btn-xs">Partneri</a>
     </div>
-    <div id="content" style="background-color:#FFFFFF;overflow:auto;max-height:600px;width:950px;float:left;padding:12px 12px;border-left:1px solid #D8D8D8;">
+    <div id="content" style="background-color:#FFFFFF;overflow:auto;width:950px;float:left;padding:12px 12px;border-left:1px solid #D8D8D8;">
         <?php
         if(isset($_GET['page']))
         {
@@ -95,14 +110,14 @@ function layout($page_id)
         ?>
     </div>
 
-    <div id="side-panel" style="background-color:#D8D8D8;height:600px;width:150px;float:left;text-align:left;padding:12px 12px;border-right:1px solid #D8D8D8;">
+    <div id="sidebar" style="background-color:#D8D8D8;width:150px;float:left;text-align:left;padding:12px 12px;border-right:1px solid #D8D8D8;">
 
     </div>
 
 
 
     <div id="footer" style="background-color:#D8D8D8;clear:both;text-align:center;vertical-align:middle;line-height:40px;">
-        <a href="#">Copyright © Ivan Aleksić</a>
+        <a href="home.php" class="btn btn-xs btn-info">Copyright © Ivan Aleksić</a>
     </div>
 
 </div>
