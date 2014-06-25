@@ -28,11 +28,12 @@ if ($_SESSION['session'] > $_SESSION['inactive']) {
     $poz_no = mysqli_real_escape_string($con, $_POST['poz_no']);
 
 
-    $sql="INSERT INTO zaduzenja (dat_izm, partner_id, racun_no, status, dat_zad, dat_val, iznos, pop_tip, pop_izn, pop_din, tr_no, mod_no, poz_no)
+    $sql="INSERT INTO zaduzenja (dat_izm, partner_id, racun_no, status, dat_zad, dat_val, iznos_zad, pop_tip, pop_izn, pop_din, tr_no, mod_no, poz_no)
           VALUES ('$dat_izm', '$partner_id', '$racun_no', '$status','$dat_zad', '$dat_val', '$iznos_zad', '$pop_tip', '$pop_izn', '$pop_din',	'$tr_no', '$mod_no', '$poz_no')";
     if (!mysqli_query($con,$sql)) {
         die('Error: ' . mysqli_error($con));
     }
+
     // escape variables for security
     //Upis u uplate
     $dat_izm = mysqli_real_escape_string($con, $_POST['dat_izm']);
@@ -41,9 +42,12 @@ if ($_SESSION['session'] > $_SESSION['inactive']) {
     $dat_upl = mysqli_real_escape_string($con, $_POST['dat_upl']);
     $iznos_upl = mysqli_real_escape_string($con, $_POST['iznos_upl']);
 
-    $sql="INSERT INTO uplate (dat_izm, partner_id, racun_no, dat_upl, iznos)
+    $sql="INSERT INTO uplate (dat_izm, partner_id, racun_no, dat_upl, iznos_upl)
           VALUES ('$dat_izm', '$partner_id', '$racun_no', '$dat_upl', '$iznos_upl')";
 }
+    if (!mysqli_query($con,$sql)) {
+        die('Error: ' . mysqli_error($con));
+    }
 mysqli_close($con);
 $_SESSION['time'] = time();
 header('Location: racuni.php');

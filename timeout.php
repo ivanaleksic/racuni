@@ -1,4 +1,5 @@
 <?php
+/**
     if ($_SESSION['session'] > $_SESSION['inactive']) {
         $_SESSION['active'] = 0;
         session_destroy();
@@ -8,18 +9,21 @@
         $_SESSION['active'] = 1;
         exit();
     }
-/**
- * Check is session exiried
+
+ * Check is session expired
  *
  * @return bool
  */
 function is_timeout()
     {
-        $_SESSION['session'] = time() - $_SESSION['time'];
-        if ($_SESSION['session'] > $_SESSION['inactive']) {
-            return true;
-        } else {
-            return false;
+        if (isset($_SESSION['time'])) {
+            $_SESSION['session'] = time() - $_SESSION['time'];
+            if ($_SESSION['session'] > $_SESSION['inactive']) {
+                return true;
+            } else {
+                return false;
+            }
+            $_SESSION['time'] = time();
         }
     }
 ?>
