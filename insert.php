@@ -9,7 +9,7 @@ if ($_SESSION['session'] > $_SESSION['inactive']) {
     $con=mysqli_connect("localhost","root","","racuni");
     // Check connection
     if (mysqli_connect_errno()) {
-        echo "Failed to connect to MySQL: " . mysqli_connect_error();
+        echo "Failed to connect to Mysqli: " . mysqli_connect_error();
     }
     // escape variables for security
     //Upis u zaduzenja
@@ -28,9 +28,9 @@ if ($_SESSION['session'] > $_SESSION['inactive']) {
     $poz_no = mysqli_real_escape_string($con, $_POST['poz_no']);
 
 
-    $sql="INSERT INTO zaduzenja (dat_izm, partner_id, racun_no, status, dat_zad, dat_val, iznos_zad, pop_tip, pop_izn, pop_din, tr_no, mod_no, poz_no)
+    $sqli="INSERT INTO zaduzenja (dat_izm, partner_id, racun_no, status, dat_zad, dat_val, iznos_zad, pop_tip, pop_izn, pop_din, tr_no, mod_no, poz_no)
           VALUES ('$dat_izm', '$partner_id', '$racun_no', '$status','$dat_zad', '$dat_val', '$iznos_zad', '$pop_tip', '$pop_izn', '$pop_din',	'$tr_no', '$mod_no', '$poz_no')";
-    if (!mysqli_query($con,$sql)) {
+    if (!mysqli_query($con,$sqli)) {
         die('Error: ' . mysqli_error($con));
     }
 

@@ -85,7 +85,7 @@ function layout($page_id)
         <a href="home.php?page=uplate" class="btn btn-xs">Uplate</a>
         <a href="home.php?page=partneri" class="btn btn-xs">Partneri</a>
     </div>
-    <div id="content" style="background-color:#FFFFFF;height:600px;width:950px;float:left;padding:12px 12px;border-left:1px solid #D8D8D8;">
+    <div id="content" style="background-color:#FFFFFF;overflow:auto;max-height:600px;width:950px;float:left;padding:12px 12px;border-left:1px solid #D8D8D8;">
         <?php
         if(isset($_GET['page']))
         {
@@ -108,10 +108,5 @@ function layout($page_id)
 </div>
 </div>
 
-
-
-
-
 </body>
 </html>
-

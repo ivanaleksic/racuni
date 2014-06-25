@@ -4,23 +4,24 @@ $sql = mysql_query("select zaduzenja.*,partneri.naziv, statusi.status, popusti.p
                     zaduzenja inner join partneri on zaduzenja.partner_id = partneri.id
                     inner join statusi on zaduzenja.status = statusi.id
                     inner join popusti on zaduzenja.pop_tip = popusti.id");
-echo "<table id='tabela' style='text-align: center;'>";
+echo "<table id='tabela'>";
 echo "<tr >
     <th style='width:60px;text-align: center;'>Račun No.</th>
     <th style='width:110px;text-align: center;'>Korisnik</th>
     <th style='width:110px;text-align: center;'>Status</th>
     <th style='width:65px;text-align: center;'>Datum zaduženja</th>
-    <th style='width:65px;text-align: center;'>Datum valute</th><th>Iznos</th>
+    <th style='width:65px;text-align: center;'>Datum valute</th>
+    <th style='width:50px;text-align: center;'>Iznos uplate</th>
     <th style='width:110px;text-align: center;'>Vrsta popusta</th>
     <th style='width:20px;text-align: center;'>Pop</th>
-    <th style='width:55px;text-align: center;'>Iznos popusta</th>
+    <th style='width:50px;text-align: center;'>Iznos popusta</th>
     <th style='width:120px;text-align: center;'>Tekući račun</th>
     <th style='width:150px;text-align: center;'>Model i poziv na broj</th>
     </td>";
 if(mysql_num_rows($sql)) {
     while($row = mysql_fetch_assoc($sql)) {
-        $naziv = $row['naziv'];
         $racun_no = $row['racun_no'];
+        $naziv = $row['naziv'];
         $status = $row['status'];
         $dat_zad = $row['dat_zad'];
         $dat_val = $row['dat_val'];
