@@ -62,46 +62,47 @@ function layout($page_id)
 </head>
 
 <body>
-<div id="container" style="position:relative;width:1000px;text-align:center;margin:0 auto;overflow:hidden;margin:0px auto;">
-    <div id="header" style="background-color:#D8D8D8;line-height:40px;">
-        <h2 style="margin-bottom:0;">Title</h2>
-    </div>
-    <div id="menu" style="background-color:#E8E8E8;height:520px;width:200px;float:left;text-align:left;padding:12px 12px;">
-        <ul type="none">
-            <li>
-                <?php
-                include 'db_connect.php';
-                $sql=mysql_query("SELECT id, naziv FROM partneri");
+<div id="container" style="position:relative;width:1100px;margin: 20px auto 0;overflow:hidden;">
+    <div id="header" style="background-color:#D8D8D8;line-height:20px;margin:0 auto;padding:12px 12px;">
 
-                if(mysql_num_rows($sql)) {
-                    $select= '<select id="partner_id" name="partner_id" class="dropdown">';
-                    while( $rs=mysql_fetch_array($sql)) {
-                        $select.='<option value='.$rs['id'].'>'.$rs['naziv'].'</option>';
-                    }
-                }
-                $select.='</select>';
-                echo $select;
-                ?>
-                <br>
-            </li>
-            <li>
-                <a href="home.php?page=zaduzenja" class="btn btn-xs">Zaduženja</a><br /><a href="home.php?page=uplate" class="btn btn-xs">Uplate</a><br /><a href="home.php?page=partneri" class="btn btn-xs">Partneri</a>
-            </li>
-        </ul>
     </div>
 
-    <div id="content" style="background-color:#FFFFFF;height:520px;width:650px;float:left;padding:12px 12px;">
+    <div id="header" style="background-color:#FFFFFF;line-height:20px;margin:0 auto;padding:12px 12px;border:1px solid #D8D8D8;">
+        <?php
+        include 'db_connect.php';
+        $sql=mysql_query("SELECT id, naziv FROM partneri");
+
+        if(mysql_num_rows($sql)) {
+            $select= '<select id="partner_id" name="partner_id" class="dropdown">';
+            while( $rs=mysql_fetch_array($sql)) {
+                $select.='<option value='.$rs['id'].'>'.$rs['naziv'].'</option>';
+            }
+        }
+        $select.='</select>';
+        echo $select;
+        ?>
+        <a href="home.php?page=zaduzenja" class="btn btn-xs">Zaduženja</a>
+        <a href="home.php?page=uplate" class="btn btn-xs">Uplate</a>
+        <a href="home.php?page=partneri" class="btn btn-xs">Partneri</a>
+    </div>
+    <div id="content" style="background-color:#FFFFFF;height:600px;width:850px;float:left;padding:12px 12px;border-left:1px solid #D8D8D8;">
         <?php
         if(isset($_GET['page']))
         {
-        $page_id = $_GET['page']; //Get the request URL
-        layout($page_id); //Call the function with the argument
+            $page_id = $_GET['page']; //Get the request URL
+            layout($page_id); //Call the function with the argument
         }
         ?>
     </div>
 
+    <div id="side-panel" style="background-color:#D8D8D8;height:600px;width:250px;float:left;text-align:left;padding:12px 12px;border-right:1px solid #D8D8D8;">
+
+    </div>
+
+
+
     <div id="footer" style="background-color:#D8D8D8;clear:both;text-align:center;vertical-align:middle;line-height:40px;">
-        <a href="#" class="btn btn-xs btn-success">Copyright © Ivan Aleksić</a>
+        <a href="#">Copyright © Ivan Aleksić</a>
     </div>
 
 </div>
