@@ -56,9 +56,6 @@ td {
 	-webkit-box-sizing:content-box;
 */
 
-li {
-    display: flex;
-    justify-content:left;
-    align-content:left;
-    flex-direction:row; /* column | row */
+ul {
+    padding: 0px;
 }

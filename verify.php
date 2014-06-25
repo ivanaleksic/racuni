@@ -11,9 +11,9 @@
             session_start();
             $_SESSION['username'] = $row['username'];
             $_SESSION['logged'] = TRUE;
-            $_SESSION['inactive'] = 5; // Timeout in seconds
+            $_SESSION['inactive'] = 300; // Timeout in seconds
             $_SESSION['time'] = time(); // Setting current time as session start time
-            header("Location: racuni.php"); // Modify to go to the page you would like
+            header("Location: home.php"); // Modify to go to the page you would like
             exit;
         } else {
             header("Location: login.php");

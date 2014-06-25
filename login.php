@@ -4,6 +4,12 @@
     <meta http-equiv="Content-Type"
           content="text/html;
           charset=utf-8">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
     <style>
         div{
             position:absolute;
@@ -32,11 +38,11 @@
 <body>
     <div>
         <form class="login-form" action="verify.php" method="post">
-            User Name:<br>
-            <input type="text" name="username"><br><br>
+            Username:<br>
+            <input type="text" name="username" class="form-control"><br><br>
             Password:<br>
-            <input type="password" name="password"><br><br>
-            <input type="submit" name="submit" value="Login"><input type="reset" value="Clear" style="margin-left:10px;">
+            <input type="password" name="password" class="form-control"><br><br>
+            <input type="submit" name="submit" class="btn btn-default" value="Login"><input type="reset" class="btn btn-default" value="Clear" style="margin-left:10px;">
         </form>
     </div>
 </body>
