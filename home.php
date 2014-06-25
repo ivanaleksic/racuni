@@ -73,7 +73,6 @@ function layout($page_id)
             $("#sidebar").css('height',height);
         });
     </script>
-
 </head>
 
 <body>

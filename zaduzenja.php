@@ -3,7 +3,8 @@ include 'db_connect.php';
 $sql = mysql_query("select zaduzenja.*,partneri.naziv, statusi.status, popusti.pop_tip from
                     zaduzenja inner join partneri on zaduzenja.partner_id = partneri.id
                     inner join statusi on zaduzenja.status = statusi.id
-                    inner join popusti on zaduzenja.pop_tip = popusti.id");
+                    inner join popusti on zaduzenja.pop_tip = popusti.id
+                    order by zaduzenja.id");
 echo "<table id='tabela'>";
 echo "<tr >
     <th style='width:60px;text-align: center;'>Račun No.</th>

@@ -168,7 +168,7 @@ echo $jj;
         <?php
         include 'db_connect.php';
         //query
-        $sql = mysql_query("select zaduzenja.*,partneri.naziv, statusi.status from zaduzenja inner join partneri on zaduzenja.partner_id = partneri.id inner join statusi on zaduzenja.status = statusi.id");
+        $sql = mysql_query("select zaduzenja.*,partneri.naziv, statusi.status from zaduzenja inner join partneri on zaduzenja.partner_id = partneri.id inner join statusi on zaduzenja.status = statusi.id order by zaduzenja.id");
         echo "<table id='tabela'>";
         echo "<tr><th>Račun No.</th><th>Korisnik</th><th>Status</th></td>";
         if(mysql_num_rows($sql)) {
