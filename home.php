@@ -101,7 +101,7 @@ function layout($page_id)
     </div>
 
     <div id="footer" style="background-color:#D8D8D8;clear:both;text-align:center;vertical-align:middle;line-height:40px;">
-        Copyright © Ivan Aleksić <a href="#" class="btn  btn-success">Button</a>
+        <a href="#" class="btn btn-xs btn-success">Copyright © Ivan Aleksić</a>
     </div>
 
 </div>
