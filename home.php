@@ -63,11 +63,11 @@ function layout($page_id)
 
 <body>
 <div id="container" style="position:relative;width:1100px;margin: 20px auto 0;overflow:hidden;">
-    <div id="header" style="background-color:#D8D8D8;line-height:20px;margin:0 auto;padding:12px 12px;">
-
+    <div id="header" style="background-color:#D8D8D8;line-height:20px;margin:0 auto;padding:6px 12px;text-align: center;">
+        <p>Naslov</p>
     </div>
 
-    <div id="header" style="background-color:#FFFFFF;line-height:20px;margin:0 auto;padding:12px 12px;border:1px solid #D8D8D8;">
+    <div id="header" style="background-color:#FFFFFF;line-height:20px;margin:0 auto;padding:6px 12px;border:1px solid #D8D8D8;">
         <?php
         include 'db_connect.php';
         $sql=mysql_query("SELECT id, naziv FROM partneri");
@@ -85,7 +85,7 @@ function layout($page_id)
         <a href="home.php?page=uplate" class="btn btn-xs">Uplate</a>
         <a href="home.php?page=partneri" class="btn btn-xs">Partneri</a>
     </div>
-    <div id="content" style="background-color:#FFFFFF;height:600px;width:850px;float:left;padding:12px 12px;border-left:1px solid #D8D8D8;">
+    <div id="content" style="background-color:#FFFFFF;height:600px;width:950px;float:left;padding:12px 12px;border-left:1px solid #D8D8D8;">
         <?php
         if(isset($_GET['page']))
         {
@@ -95,7 +95,7 @@ function layout($page_id)
         ?>
     </div>
 
-    <div id="side-panel" style="background-color:#D8D8D8;height:600px;width:250px;float:left;text-align:left;padding:12px 12px;border-right:1px solid #D8D8D8;">
+    <div id="side-panel" style="background-color:#D8D8D8;height:600px;width:150px;float:left;text-align:left;padding:12px 12px;border-right:1px solid #D8D8D8;">
 
     </div>
 
@@ -106,7 +106,6 @@ function layout($page_id)
     </div>
 
 </div>
--->
 </div>
 
 
