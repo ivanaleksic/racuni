@@ -54,7 +54,7 @@ echo $jj;
 -->
 <body>
     <div style="float:left;width:400px;">
-        <form id="unos_zad" action="insert.php" method="post" style="width:340px;font:Arial;">
+        <form id="unos_zad" action="includes/insert.php" method="post" style="width:340px;font:Arial;">
             <div style="text-align:center;">
                 <p style="text-align:center;">Podaci o zaduženju:</p>
             </div>
