@@ -1,5 +1,5 @@
 <?php
-    include 'db_connect.php';
+    include 'mysql_connect.php';
     $sql=mysql_query("SELECT id, naziv FROM partneri");
     if(mysql_num_rows($sql)) {
         $select= '<select name="partner_id">';

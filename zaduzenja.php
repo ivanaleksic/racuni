@@ -1,5 +1,5 @@
 <?php
-include 'db_connect.php';
+include 'mysql_connect.php';
 $sql = mysql_query("select zaduzenja.*,partneri.naziv, statusi.status, popusti.pop_tip from
                     zaduzenja inner join partneri on zaduzenja.partner_id = partneri.id
                     inner join statusi on zaduzenja.status = statusi.id

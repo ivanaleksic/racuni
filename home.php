@@ -4,6 +4,8 @@ include('timeout.php');
 if(is_timeout()){
     session_destroy();
     header("location:login.php");
+} else {
+    $_SESSION['time'] = time();
 }
 ?>
 
@@ -23,8 +25,8 @@ function layout($page_id)
             echo '<h2>Welcome to the home page</h2>';
             echo '<p>This is the home page...</p>';
         case '': //When it is null
-            echo '<h2>Welcome to the home page</h2>';
-            echo '<p>This is the home page...</p>';
+            echo '<h2>Under construction...</h2>';
+            echo '<p></p>';
             break;
         case 'zaduzenja':
             include('zaduzenja.php');
@@ -83,11 +85,11 @@ function layout($page_id)
 
     <div id="header" style="background-color:#FFFFFF;line-height:20px;margin:0 auto;padding:6px 12px;border:1px solid #D8D8D8;">
         <?php
-        include 'db_connect.php';
+        include 'mysql_connect.php';
         $sql=mysql_query("SELECT id, naziv FROM partneri");
 
         if(mysql_num_rows($sql)) {
-            $select= '<select id="partner_id" name="partner_id" class="dropdown">';
+            $select= '<select id="partner_id" name="partner_id" class="dropdown" style="height:20px;">';
             while( $rs=mysql_fetch_array($sql)) {
                 $select.='<option value='.$rs['id'].'>'.$rs['naziv'].'</option>';
             }
@@ -95,8 +97,12 @@ function layout($page_id)
         $select.='</select>';
         echo $select;
         ?>
+        <a href="home.php" class="btn btn-xs btn-default">OK</a>
+
         <a href="home.php?page=zaduzenja" class="btn btn-xs">Zaduženja</a>
+        <a href="home.php?page=" class="btn btn-xs">Novo zaduženje</a>
         <a href="home.php?page=uplate" class="btn btn-xs">Uplate</a>
+        <a href="home.php?page=" class="btn btn-xs">Nova uplata</a>
         <a href="home.php?page=partneri" class="btn btn-xs">Partneri</a>
     </div>
     <div id="content" style="background-color:#FFFFFF;overflow:auto;width:950px;float:left;padding:12px 12px;border-left:1px solid #D8D8D8;">

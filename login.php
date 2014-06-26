@@ -26,11 +26,14 @@
             margin: 0 auto;
             text-align: center;
             padding: 20px;
-            color: #D8D8D8;
+            color: darkslategrey;
             background : #c4c4c4;
             border-radius: 7px;
             -webkit-border-radius: 7px;
             -moz-border-radius: 7px;
+        }
+        .input-group-sm{
+            color: darkslategray;
         }
     </style>
 </head>
@@ -39,10 +42,10 @@
     <div>
         <form class="login-form" action="verify.php" method="post">
             Username:<br>
-            <input type="text" name="username" class="form-control"><br><br>
+            <input type="text" name="username" class="input-group-sm"><br><br>
             Password:<br>
-            <input type="password" name="password" class="form-control"><br><br>
-            <input type="submit" name="submit" class="btn btn-default" value="Login"><input type="reset" class="btn btn-default" value="Clear" style="margin-left:10px;">
+            <input type="password" name="password" class="input-group-sm"><br><br>
+            <input type="submit" name="submit" class="btn btn-xs btn-success" value="Login"><input type="reset" class="btn btn-xs btn-danger" value="Clear" style="margin-left:10px;">
         </form>
     </div>
 </body>

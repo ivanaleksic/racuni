@@ -1,5 +1,5 @@
 <?php
-include 'db_connect.php';
+include 'mysql_connect.php';
 $sql = mysql_query("select uplate.*,partneri.naziv from
                     uplate inner join partneri on uplate.partner_id = partneri.id
                     order by uplate.id");

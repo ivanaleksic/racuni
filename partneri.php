@@ -6,7 +6,7 @@ if ($_SESSION['session'] > $_SESSION['inactive']) {
     echo '<script type="text/javascript">self.close();</script>';
     exit();
 } else {
-    include 'db_connect.php';
+    include 'mysql_connect.php';
     //query
     $sql = mysql_query("SELECT * FROM partneri");
     echo "<table id='tbl_partneri'>";

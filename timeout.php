@@ -14,16 +14,14 @@
  *
  * @return bool
  */
-function is_timeout()
-    {
-        if (isset($_SESSION['time'])) {
-            $_SESSION['session'] = time() - $_SESSION['time'];
-            if ($_SESSION['session'] > $_SESSION['inactive']) {
-                return true;
-            } else {
-                return false;
-            }
-            $_SESSION['time'] = time();
-        }
+function is_timeout() {
+/*    if (isset($_SESSION['time'])) {*/
+    $_SESSION['session'] = time() - $_SESSION['time'];
+    if ($_SESSION['session'] > $_SESSION['inactive']) {
+        return true;
+    } else {
+        return false;
     }
+}
+/*}*/
 ?>

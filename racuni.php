@@ -81,7 +81,7 @@ echo $jj;
             <br>
             <label class="label_wide">Partner: </label>
             <?php
-                include 'db_connect.php';
+                include 'mysql_connect.php';
                 //query
                 $sql=mysql_query("SELECT id, naziv FROM partneri");
 
@@ -100,7 +100,7 @@ echo $jj;
             <br>
             <label class="label_wide">Status: </label>
             <?php
-                include 'db_connect.php';
+                include 'mysql_connect.php';
                 //query
                 $sql=mysql_query("SELECT id, status FROM statusi");
                 if(mysql_num_rows($sql)) {
@@ -124,7 +124,7 @@ echo $jj;
             <br>
             <label class="label_wide">Tip popusta: </label>
             <?php
-                include 'db_connect.php';
+                include 'mysql_connect.php';
                 //query
                 $sql=mysql_query("SELECT id, pop_tip FROM popusti");
                 if(mysql_num_rows($sql)) {
@@ -166,7 +166,7 @@ echo $jj;
     </div>
     <div style="overflow:auto;max-height:500px;float:left;width:300px;">
         <?php
-        include 'db_connect.php';
+        include 'mysql_connect.php';
         //query
         $sql = mysql_query("select zaduzenja.*,partneri.naziv, statusi.status from zaduzenja inner join partneri on zaduzenja.partner_id = partneri.id inner join statusi on zaduzenja.status = statusi.id order by zaduzenja.id");
         echo "<table id='tabela'>";
