@@ -56,7 +56,7 @@ function layout($page_id)
     <script src="//code.jquery.com/jquery-1.10.2.js"></script>
     <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
 
-    <link rel="stylesheet" href="racuni.css" type="text/css">
+    <link rel="stylesheet" href="resources/racuni.css" type="text/css">
 
     <script type="text/javascript">
         $(function() {

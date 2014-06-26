@@ -1,36 +1,18 @@
-<?php
-session_start();
-//if (isset($_SESSION['time'])) {
-    /*$_SESSION['session'] = time() - $_SESSION['time'];
-    if ($_SESSION['session'] > $_SESSION['inactive']) {
-    	$_SESSION['active'] = 0;
-        session_destroy();
-        header("location:login.php");
-    }*/
-//}
-include('timeout.php');
-if(is_timeout()){
-    session_destroy();
-    header("location:login.php");
-}
-?>
-
 <!DOCTYPE html>
 <html lang="sr">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
-    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
-    <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
-    <!-- Optional theme -->
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="resources/bootstrap.min.css">
+    <link rel="stylesheet" href="resources/bootstrap-theme.min.css">
     <!-- Latest compiled and minified JavaScript -->
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 
-    <link rel="stylesheet" href="racuni.css" type="text/css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+
+    <link rel="stylesheet" href="resources/racuni.css" type="text/css">
 
     <script type="text/javascript">
 
@@ -81,7 +63,7 @@ echo $jj;
             <br>
             <label class="label_wide">Partner: </label>
             <?php
-                include 'mysql_connect.php';
+                include('includes/mysql_connect.php');
                 //query
                 $sql=mysql_query("SELECT id, naziv FROM partneri");
 
@@ -100,7 +82,7 @@ echo $jj;
             <br>
             <label class="label_wide">Status: </label>
             <?php
-                include 'mysql_connect.php';
+                include('includes/mysql_connect.php');
                 //query
                 $sql=mysql_query("SELECT id, status FROM statusi");
                 if(mysql_num_rows($sql)) {
@@ -124,7 +106,7 @@ echo $jj;
             <br>
             <label class="label_wide">Tip popusta: </label>
             <?php
-                include 'mysql_connect.php';
+                include('includes/mysql_connect.php');
                 //query
                 $sql=mysql_query("SELECT id, pop_tip FROM popusti");
                 if(mysql_num_rows($sql)) {
@@ -160,15 +142,18 @@ echo $jj;
             <input type="text" name="iznos_upl" class="input_big">
             <br><br>
             <div style="text-align:center;">
-                <input type="submit" value="Sacuvaj"><input type="reset" value="Ponisti">
+                <input type="submit" class="btn btn-xs btn-success" value="Sacuvaj"> <input class="btn btn-xs btn-danger" type="reset" value="Ponisti">
             </div>
         </form>
     </div>
     <div style="overflow:auto;max-height:500px;float:left;width:300px;">
         <?php
-        include 'mysql_connect.php';
+        include(('includes/mysql_connect.php'));
         //query
-        $sql = mysql_query("select zaduzenja.*,partneri.naziv, statusi.status from zaduzenja inner join partneri on zaduzenja.partner_id = partneri.id inner join statusi on zaduzenja.status = statusi.id order by zaduzenja.id");
+        $sql = mysql_query("select zaduzenja.*,partneri.naziv, statusi.status from zaduzenja
+                            inner join partneri on zaduzenja.partner_id = partneri.id
+                            inner join statusi on zaduzenja.status = statusi.id
+                            order by zaduzenja.racun_no");
         echo "<table id='tabela'>";
         echo "<tr><th>Račun No.</th><th>Korisnik</th><th>Status</th></td>";
         if(mysql_num_rows($sql)) {
@@ -183,6 +168,7 @@ echo $jj;
         ?>
     </div>
     <div>
+<!--
         <input type=button onClick="parent.location='partneri.php'" value='parent button'>
         <input type=button onClick="location.href='partneri.php'" value='href button'>
         <input type="button" value="PopUp" onclick="popUp('partneri.php');" />
@@ -193,6 +179,7 @@ echo $jj;
         </form>
         <br/>
         <input type=button onClick="parent.location='home.php'" value='Home page'>
+-->
     </div>
 </body>
 </html>
