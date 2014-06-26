@@ -17,25 +17,27 @@ if(is_timeout()){
  *@copyright: inTechgrity.com
  *@license: Use wherever you want however you can.
  *****************************************/
-//Main funciton for the Page layout
 function layout($page_id)
 {
     switch($page_id) {
-        default: //Default, ie when the page_id does not match with predefined cases
-            echo '<h2>Welcome to the home page</h2>';
+        default: //Default, kada page_id nije ispravan
+            echo '<h3>Welcome to the home page</h3>';
             echo '<p>This is the home page...</p>';
-        case '': //When it is null
-            echo '<h2>Under construction...</h2>';
+        case '': //Kada je prazno
+            echo '<h3>Under construction...</h3>';
             echo '<p></p>';
             break;
         case 'zaduzenja':
-            include('zaduzenja.php');
+            include('includes/zaduzenja.php');
             break;
         case 'uplate':
-            include('uplate.php');
+            include('includes/uplate.php');
+            break;
+        case 'racuni':
+            include('racuni.php');
             break;
         case 'partneri':
-            include('partneri.php');
+            include('includes/partneri.php');
     }
 }
 ?>
@@ -44,16 +46,16 @@ function layout($page_id)
 <html lang="sr" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
-    <!-- Optional theme -->
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
+
+    <link rel="stylesheet" href="resources/bootstrap.min.css">
+    <link rel="stylesheet" href="resources/bootstrap-theme.min.css">
     <!-- Latest compiled and minified JavaScript -->
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 
     <link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
     <script src="//code.jquery.com/jquery-1.10.2.js"></script>
     <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+
     <link rel="stylesheet" href="racuni.css" type="text/css">
 
     <script type="text/javascript">
@@ -80,12 +82,12 @@ function layout($page_id)
 <body>
 <div id="container" style="position:relative;width:1100px;margin: 20px auto 0;overflow:hidden;">
     <div id="header" style="background-color:#D8D8D8;line-height:12px;margin:0 auto;padding:6px 12px;text-align: center;">
-        <p><b>NASLOV IDE OVDE</b></p>
+        <p><b>Ovde bi trebalo da bude neki naslov...</b></p>
     </div>
 
     <div id="header" style="background-color:#FFFFFF;line-height:20px;margin:0 auto;padding:6px 12px;border:1px solid #D8D8D8;">
         <?php
-        include 'mysql_connect.php';
+        include('includes/mysql_connect.php');
         $sql=mysql_query("SELECT id, naziv FROM partneri");
 
         if(mysql_num_rows($sql)) {
@@ -97,14 +99,8 @@ function layout($page_id)
         $select.='</select>';
         echo $select;
         ?>
-        <a href="home.php" class="btn btn-xs btn-default">OK</a>
-
-        <a href="home.php?page=zaduzenja" class="btn btn-xs">Zaduženja</a>
-        <a href="home.php?page=" class="btn btn-xs">Novo zaduženje</a>
-        <a href="home.php?page=uplate" class="btn btn-xs">Uplate</a>
-        <a href="home.php?page=" class="btn btn-xs">Nova uplata</a>
-        <a href="home.php?page=partneri" class="btn btn-xs">Partneri</a>
     </div>
+
     <div id="content" style="background-color:#FFFFFF;overflow:auto;width:950px;float:left;padding:12px 12px;border-left:1px solid #D8D8D8;">
         <?php
         if(isset($_GET['page']))
@@ -115,16 +111,20 @@ function layout($page_id)
         ?>
     </div>
 
-    <div id="sidebar" style="background-color:#D8D8D8;width:150px;float:left;text-align:left;padding:12px 12px;border-right:1px solid #D8D8D8;">
-
+    <div id="sidebar" style="background-color:#D8D8D8;overflow:auto;width:150px;text-align:left;padding:12px 12px;border-right:1px solid #D8D8D8;">
+        <a href="home.php" class="btn btn-xs btn-default">Go to Home page</a><br />
+        <br />
+        <a href="home.php?page=zaduzenja" class="btn btn-xs">Zaduženja</a><br />
+        <a href="home.php?page=" class="btn btn-xs">Novo zaduženje</a><br />
+        <a href="home.php?page=uplate" class="btn btn-xs">Uplate</a><br />
+        <a href="home.php?page=" class="btn btn-xs">Nova uplata</a><br />
+        <a href="home.php?page=partneri" class="btn btn-xs">Partneri</a><br />
+        <a href="home.php?page=racuni" class="btn btn-xs">Računi</a><br />
     </div>
-
-
 
     <div id="footer" style="background-color:#D8D8D8;clear:both;text-align:center;vertical-align:middle;line-height:40px;">
         <a href="home.php" class="btn btn-xs btn-info">Copyright © Ivan Aleksić</a>
     </div>
-
 </div>
 </div>
 
