@@ -2,6 +2,9 @@ body {
     font-family:Arial;
     font-size:11px;
 }
+input {
+    font-size:12px;
+}
 .label_wide {
 	width:120px;
 	display: inline-block;
@@ -55,6 +58,9 @@ th {
 td {
     padding: 3px;
 }
+ul {
+    padding: 0px;
+}
 
 /*
 	-ms-box-sizing:content-box;
@@ -62,7 +68,3 @@ td {
 	box-sizing:content-box;
 	-webkit-box-sizing:content-box;
 */
-
-ul {
-    padding: 0px;
-}

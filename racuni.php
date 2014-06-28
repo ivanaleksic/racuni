@@ -41,6 +41,16 @@
             params += ', toolbar=no';
             window.open(url,'PHP Pop Up',params);
         }
+
+        function submit_oba() {
+            document.forms.unos_zad.submit();
+            setTimeout(function(){document.forms.unos_upl.submit()},1000);
+        }
+
+        function clear_oba() {
+            document.forms["unos_zad"].reset();
+            document.forms["unos_upl"].reset();
+        }
     </script>
 </head>
 
@@ -54,11 +64,11 @@ $jj=moja_funkcija('idemo kuci');
 echo $jj;-->
 
 <body>
-    <div style="overflow:auto;max-height:530px;float:left;width:700px;">
-        <form id="unos_zad" action="includes/insert_zad.php" method="post">
-            <table name="unos_zaduzenja" style="width:340px;float:left;margin-right:12px;" cellpadding="0" cellspacing="0">
+    <div style="overflow:auto;height:430px;">
+        <form name="unos_zad" action="includes/insert_zad.php" method="post">
+            <table id="unos_zaduzenja" style="width:340px;float:left;margin-right:12px;" cellpadding="0" cellspacing="0">
                 <th colspan="4" style="margin:0;padding:2px;text-align:center">
-                    <h6><b>Podaci o zaduženju</b></h6>
+                    <h5><b>Podaci o zaduženju</b></h5>
                 </th>
                 <tr>
                     <td>
@@ -161,7 +171,7 @@ echo $jj;-->
                         <label class="label_wide">Popust: </label>
                     </td>
                     <td colspan="3" style="width:40px;">
-                    <input type="text" name="pop_izn" class="input" style="width:80px;margin-left:0px;text-align:center;">
+                    <input type="text" name="pop_izn" class="input" style="width:80px;margin-left:0px;text-align:right;">
                     </td>
                 </tr>
                 <tr>
@@ -181,7 +191,7 @@ echo $jj;-->
                     <td style="width:35px;text-align: left">
                         <input type="text" name="tr_no_1" class="input" maxlength="3" onKeyup="autotab(this, document.unos_zaduzenja.poz_no)" size="2" style="width:100%;margin-left:0px;">
                     </td>
-                    <td style="width:85px;text-align: left">
+                    <td style="width:106px;text-align: left">
                         <input type="text" name="tr_no_2" class="input" onKeyup="autotab(this, document.unos_zaduzenja.poz_no)" size="2" style="width:100%;margin-left:0px;">
                     </td>
                     <td style="width:35px;text-align: right">
@@ -206,16 +216,16 @@ echo $jj;-->
                 </tr>
                     <tr>
                         <td colspan="4" style="text-align: center">
-                            <input type="submit" class="btn btn-xs btn-success" value="Sacuvaj"> <input class="btn btn-xs btn-danger" type="reset" value="Ponisti">
+                            <input type="submit" class="btn btn-xs btn-success" value="Sačuvaj"> <input type="reset" class="btn btn-xs btn-danger" value="Poništi">
                         </td>
                 </tr>
             </table>
         </form>
         <!--Unos zaduzenja-->
-        <form id="unos_upl" action="includes/insert_upl.php" method="post">
-            <table name="unos_zaduzenja" style="width:340px;" cellpadding="0" cellspacing="0">
+        <form name="unos_upl" action="includes/insert_upl.php" method="post">
+            <table id="unos_zaduzenja" style="width:340px;" cellpadding="0" cellspacing="0">
                 <th colspan="4" style="margin:0;padding:2px;text-align:center">
-                        <h6><b>Podaci o uplati</b></h6>
+                        <h5><b>Podaci o uplati</b></h5>
                 </th>
                 <tr>
                     <td>
@@ -289,13 +299,14 @@ echo $jj;-->
                 </tr>
                 <tr>
                     <td colspan="4" style="text-align: center">
-                        <input type="submit" class="btn btn-xs btn-success" value="Sacuvaj"> <input class="btn btn-xs btn-danger" type="reset" value="Ponisti">
+                        <input type="submit" class="btn btn-xs btn-success" value="Sačuvaj"> <input type="reset" class="btn btn-xs btn-danger" value="Poništi">
                     </td>
                 </tr>
             </table>
         </form>
     </div>
-    <div>
+    <div style="text-align: center">
+        <input type="button" class="btn btn-xs btn-success" value="Sačuvaj sve" onClick="submit_oba()"> <input type="button" class="btn btn-xs btn-danger" value="Poništi sve" onClick="clear_oba()">
     <!--
         <input type=button onClick="parent.location='partneri.php'" value='parent button'>
         <input type=button onClick="location.href='partneri.php'" value='href button'>

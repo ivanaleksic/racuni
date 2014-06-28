@@ -81,7 +81,7 @@ function layout($page_id)
 
 <body>
 <div id="container" style="position:relative;width:1100px;margin: 20px auto 0;overflow:hidden;">
-    <div id="header" style="background-color:#D8D8D8;line-height:12px;margin:0 auto;padding:6px 12px;text-align: center;">
+    <div id="header" style="background-color:#D8D8D8;line-height:12px;margin:0 auto;padding:6px 12px;text-align: left;">
         <?php
         include('includes/mysql_connect.php');
         $sql=mysql_query("SELECT id, naziv FROM partneri");
@@ -101,7 +101,7 @@ function layout($page_id)
 
     </div>-->
 
-    <div id="sidebar" style="background-color:#D8D8D8;overflow:auto;width:150px;float:left;text-align:left;padding:12px 12px;border-left:1px solid #D8D8D8;">
+    <div id="sidebar" style="background-color:#FFFFFF;overflow:auto;width:150px;float:left;text-align:left;padding:12px 12px; border-left:1px solid #D8D8D8;">
         <a href="main.php" class="btn btn-xs btn-default">Go to Home page</a><br />
         <br />
         <a href="main.php?page=zaduzenja" class="btn btn-xs">Zaduženja</a><br />
@@ -112,7 +112,7 @@ function layout($page_id)
         <a href="main.php?page=racuni" class="btn btn-xs">Računi</a><br />
     </div>
 
-    <div id="content" style="background-color:#FFFFFF;overflow:auto;width:950px;padding:12px 12px;border-right:1px solid #D8D8D8;">
+    <div id="content" style="background-color:#FFFFFF;overflow:auto;width:950px;padding:12px 12px;border-left:1px solid #D8D8D8;border-right:1px solid #D8D8D8;">
         <?php
         if(isset($_GET['page']))
         {
