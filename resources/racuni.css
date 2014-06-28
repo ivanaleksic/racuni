@@ -5,12 +5,19 @@ body {
 .label_wide {
 	width:120px;
 	display: inline-block;
-	margin-left:20px;
+	margin-left:5px;
+    font-size:12px;
+}
+.label_s {
+    width:50px;
+    display: inline-block;
+    font-size:12px;
 }
 .input_small {
 	width:20px;
 	display: inline-block;
 	margin-left:20px;
+    font-size:12px;
 }
 .input_big {
 	width:150px;
@@ -18,16 +25,16 @@ body {
 	font-size:12px;
 	margin-left:20px;
 }
-.select_big {
+/*.select_big {
 	width:159px;
 	display: inline-block;
 	font-size:12px;
 	margin-left:20px;
-}
+}*/
 .ui-datepicker {
 	font-size:11px !important;
 }
-table {
+.odd_even_table {
 	border:0;
 	border-collapse: collapse;
 	border-spacing:0;
@@ -39,10 +46,10 @@ th {
     padding: 3px;
     height: 15px;
 }
-tr:nth-of-type(odd) {
+.odd_even_table tr:nth-of-type(odd) {
 	background-color:#E8E8E8;
 }
-tr:nth-of-type(even) {
+.odd_even_table tr:nth-of-type(even) {
 	background-color:#FFFFFF;
 }
 td {

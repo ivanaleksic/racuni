@@ -42,9 +42,9 @@
     <div>
         <form class="login-form" action="verify.php" method="post">
             Username:<br>
-            <input type="text" name="username" class="input-group-sm"><br><br>
+            <input type="text" name="username" style="color:darkslategray;" autofocus="1"><br><br>
             Password:<br>
-            <input type="password" name="password" class="input-group-sm"><br><br>
+            <input type="password" name="password" style="color:darkslategray;"><br><br>
             <input type="submit" name="submit" class="btn btn-xs btn-success" value="Login"><input type="reset" class="btn btn-xs btn-danger" value="Clear" style="margin-left:10px;">
         </form>
     </div>

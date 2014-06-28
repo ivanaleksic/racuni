@@ -3,7 +3,7 @@ include 'mysql_connect.php';
 $sql = mysql_query("select uplate.*,partneri.naziv from
                     uplate inner join partneri on uplate.partner_id = partneri.id
                     order by uplate.racun_no");
-echo "<table id='tabela'>";
+echo "<table id='tabela' class='odd_even_table'>";
 echo "<tr >
     <th style='width:60px;text-align: center;'>Račun No.</th>
     <th style='width:110px;text-align: center;'>Korisnik</th>

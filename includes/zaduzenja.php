@@ -5,7 +5,7 @@ $sql = mysql_query("select zaduzenja.*,partneri.naziv, statusi.status, popusti.p
                     inner join statusi on zaduzenja.status = statusi.id
                     inner join popusti on zaduzenja.pop_tip = popusti.id
                     order by zaduzenja.racun_no");
-echo "<table id='tabela'>";
+echo "<table id='tabela' class='odd_even_table'>";
 echo "<tr >
     <th style='width:60px;text-align: center;'>Račun No.</th>
     <th style='width:110px;text-align: center;'>Korisnik</th>

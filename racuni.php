@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="sr">
+
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 
@@ -16,8 +17,8 @@
 
     <script type="text/javascript">
 
-        $(function () {
-            $(".datepicker").datepicker({ dateFormat: "yy-mm-dd", changeMonth: true, changeYear: true, yearRange: '-15:+5' }).val()
+        $(function() {
+            $(".datepicker").datepicker({ dateFormat: "dd.mm.yy."/*"yy-mm-dd"*/, changeMonth: true, changeYear: true, yearRange: '-15:+15' }).val()
         });
 
         function Partneri(url) {
@@ -42,133 +43,260 @@
         }
     </script>
 </head>
-<!--
-<?php /*function moja_funkcija($parm)
+
+<?php
+/*function moja_funkcija($parm)
 {
     return 'Moja funkcija koja se zove '.$parm;
 }
-*/?>
+*/?><!--
 $jj=moja_funkcija('idemo kuci');
-echo $jj;
+echo $jj;-->
 
--->
 <body>
-    <div style="float:left;width:400px;">
-        <form id="unos_zad" action="includes/insert.php" method="post" style="width:340px;font:Arial;">
-            <div style="text-align:center;">
-                <p style="text-align:center;">Podaci o zaduženju:</p>
-            </div>
-            <label class="label_wide">Datum izmene: </label>
-            <input type="text" name="dat_izm" class="input_big datepicker" autocomplete="off">
-            <br>
-            <label class="label_wide">Partner: </label>
-            <?php
-                include('includes/mysql_connect.php');
-                //query
-                $sql=mysql_query("SELECT id, naziv FROM partneri");
+    <div style="overflow:auto;max-height:530px;float:left;width:700px;">
+        <form id="unos_zad" action="includes/insert_zad.php" method="post">
+            <table name="unos_zaduzenja" style="width:340px;float:left;margin-right:12px;" cellpadding="0" cellspacing="0">
+                <th colspan="4" style="margin:0;padding:2px;text-align:center">
+                    <h6><b>Podaci o zaduženju</b></h6>
+                </th>
+                <tr>
+                    <td>
+                        <label class="label_wide">Partner: </label>
+                    </td>
+                    <td colspan="3" style="width:140px;">
+                        <?php
+                        include('includes/mysql_connect.php');
+                        //query
+                        $sql=mysql_query("SELECT id, naziv FROM partneri");
 
-                if(mysql_num_rows($sql)) {
-                    $select= '<select id="partner_id" name="partner_id" class="select_big">';
-                    while( $rs=mysql_fetch_array($sql)) {
-                        $select.='<option value='.$rs['id'].'>'.$rs['naziv'].'</option>';
-                    }
-                }
-                $select.='</select>';
-                echo $select;
-            ?>
-            <br>
-            <label class="label_wide">Broj računa: </label>
-            <input type="text" name="racun_no" class="input_big">
-            <br>
-            <label class="label_wide">Status: </label>
-            <?php
-                include('includes/mysql_connect.php');
-                //query
-                $sql=mysql_query("SELECT id, status FROM statusi");
-                if(mysql_num_rows($sql)) {
-                    $select= '<select name="status" class="select_big">';
-                    while($rs=mysql_fetch_array($sql)) {
-                          $select.='<option value='.$rs['id'].'>'.$rs['status'].'</option>';
-                    }
-                }
-                $select.='</select>';
-                echo $select;
-            ?>
-            <br>
-            <label class="label_wide">Datum zaduženja: </label>
-            <input type="text" name="dat_zad" class="input_big datepicker" autocomplete="off">
-            <br>
-            <label class="label_wide">Datum valute: </label>
-            <input type="text" name="dat_val" class="input_big datepicker" autocomplete="off">
-            <br>
-            <label class="label_wide">Iznos: </label>
-            <input type="text" name="iznos_zad" class="input_big">
-            <br>
-            <label class="label_wide">Tip popusta: </label>
-            <?php
-                include('includes/mysql_connect.php');
-                //query
-                $sql=mysql_query("SELECT id, pop_tip FROM popusti");
-                if(mysql_num_rows($sql)) {
-                    $select= '<select name="pop_tip" class="select_big">';
-                    while($rs=mysql_fetch_array($sql)) {
-                        $select.='<option value='.$rs['id'].'>'.$rs['pop_tip'].'</option>';
-                    }
-                }
-                $select.='</select>';
-                echo $select;
-            ?>
-            <br>
-            <label class="label_wide">Popust: </label>
-            <input type="text" name="pop_izn" class="input_big">
-            <br>
-            <label class="label_wide">Iznos popusta: </label>
-            <input type="text" name="pop_din" class="input_big">
-            <br>
-            <label class="label_wide">Tekući račun: </label>
-            <input type="text" name="tr_no" class="input_big">
-            <br>
-            <label class="label_wide">Model i poziv na broj: </label>
-            <input type="text" name="mod_no" class="input_small">
-            <input type="text" name="poz_no" class="input_big" style="width:117px;margin-left:0px;">
-            <br>
-            <div style="text-align:center;">
-                <p style="text-align:center;">Podaci o uplati:</p>
-            </div>
-            <label class="label_wide">Datum uplate: </label>
-            <input type="text" name="dat_upl" class="input_big datepicker" autocomplete="off">
-            <br>
-            <label class="label_wide">Iznos: </label>
-            <input type="text" name="iznos_upl" class="input_big">
-            <br><br>
-            <div style="text-align:center;">
-                <input type="submit" class="btn btn-xs btn-success" value="Sacuvaj"> <input class="btn btn-xs btn-danger" type="reset" value="Ponisti">
-            </div>
+                        if(mysql_num_rows($sql)) {
+                            $select= '<select id="partner_id" name="partner_id" class="select_big" autofocus="1" style="width:100%;display: inline-block;font-size:12px;margin-left:0px;">';
+                            while( $rs=mysql_fetch_array($sql)) {
+                                $select.='<option value='.$rs['id'].'>'.$rs['naziv'].'</option>';
+                            }
+                        }
+                        $select.='</select>';
+                        echo $select;
+                        ?>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label class="label_wide">Broj računa: </label>
+                    </td>
+                    <td colspan="3" style="width:40px;text-align: left">
+                        <input type="text" name="racun_no" class="input" style="width:80px;margin-left:0px;">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label class="label_wide">Status: </label>
+                    </td>
+                    <td colspan="3" style="width:140px;">
+                        <?php
+                        include('includes/mysql_connect.php');
+                        //query
+                        $sql=mysql_query("SELECT id, status FROM statusi");
+                        if(mysql_num_rows($sql)) {
+                            $select= '<select name="status" class="select_big" style="width:100%;display: inline-block;font-size:12px;margin-left:0px;">';
+                            while($rs=mysql_fetch_array($sql)) {
+                                $select.='<option value='.$rs['id'].'>'.$rs['status'].'</option>';
+                            }
+                        }
+                        $select.='</select>';
+                        echo $select;
+                        ?>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label class="label_wide">Datum zaduženja: </label>
+                    </td>
+                    <td colspan="3" style="width:40px;text-align: left">
+                    <input type="text" name="dat_zad" class="input_big datepicker" autocomplete="off" style="width:80px;margin-left:0px;">
+                    <label class="label_s">god.</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label class="label_wide">Datum valute: </label>
+                    </td>
+                    <td colspan="3" style="width:40px;text-align: left">
+                    <input type="text" name="dat_val" class="input_big datepicker" autocomplete="off" style="width:80px;margin-left:0px;">
+                    <label class="label_s">god.</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label class="label_wide">Iznos zaduženja: </label>
+                    </td>
+                    <td colspan="3" style="width:40px;text-align: left">
+                    <input type="text" name="iznos_zad" class="input" style="width:80px;margin-left:0px;text-align:right;">
+                    <label class="label_s">dinara</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label class="label_wide">Tip popusta: </label>
+                    </td>
+                    <td colspan="3" style="width:140px;">
+                        <?php
+                        include('includes/mysql_connect.php');
+                        //query
+                        $sql=mysql_query("SELECT id, pop_tip FROM popusti");
+                        if(mysql_num_rows($sql)) {
+                            $select= '<select name="pop_tip" class="select_big" style="width:100%;display: inline-block;font-size:12px;margin-left:0px;">';
+                            while($rs=mysql_fetch_array($sql)) {
+                                $select.='<option value='.$rs['id'].'>'.$rs['pop_tip'].'</option>';
+                            }
+                        }
+                        $select.='</select>';
+                        echo $select;
+                        ?>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label class="label_wide">Popust: </label>
+                    </td>
+                    <td colspan="3" style="width:40px;">
+                    <input type="text" name="pop_izn" class="input" style="width:80px;margin-left:0px;text-align:center;">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label class="label_wide">Iznos popusta: </label>
+                    </td>
+                    <td colspan="3" style="width:40px;">
+                    <input type="text" name="pop_din" class="input" style="width:80px;margin-left:0px;text-align:right;">
+                    <label class="label_s">dinara</label>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label class="label_wide">Broj tekućeg računa: </label>
+                    </td>
+                    <td style="width:35px;text-align: left">
+                        <input type="text" name="tr_no_1" class="input" maxlength="3" onKeyup="autotab(this, document.unos_zaduzenja.poz_no)" size="2" style="width:100%;margin-left:0px;">
+                    </td>
+                    <td style="width:85px;text-align: left">
+                        <input type="text" name="tr_no_2" class="input" onKeyup="autotab(this, document.unos_zaduzenja.poz_no)" size="2" style="width:100%;margin-left:0px;">
+                    </td>
+                    <td style="width:35px;text-align: right">
+                        <input type="text" name="tr_no_3" class="input"  maxlength="2" style="width:100%;margin-left:0px;">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label class="label_wide">Model i poziv na broj: </label>
+                    </td>
+                    <td style="width:35px;text-align: left">
+                        <input type="text" name="mod_no" class="input" maxlength="2" onKeyup="autotab(this, document.unos_zaduzenja.poz_no)" size="2" style="width:100%;margin-left:0px;">
+                    </td>
+                    <td colspan="2" style="text-align: right">
+                        <input type="text" name="poz_no" class="input" style="width:100%;margin-left:0px;">
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="4" style="text-align: center">
+                        <br/>
+                    </td>
+                </tr>
+                    <tr>
+                        <td colspan="4" style="text-align: center">
+                            <input type="submit" class="btn btn-xs btn-success" value="Sacuvaj"> <input class="btn btn-xs btn-danger" type="reset" value="Ponisti">
+                        </td>
+                </tr>
+            </table>
+        </form>
+        <!--Unos zaduzenja-->
+        <form id="unos_upl" action="includes/insert_upl.php" method="post">
+            <table name="unos_zaduzenja" style="width:340px;" cellpadding="0" cellspacing="0">
+                <th colspan="4" style="margin:0;padding:2px;text-align:center">
+                        <h6><b>Podaci o uplati</b></h6>
+                </th>
+                <tr>
+                    <td>
+                        <label class="label_wide">Partner: </label>
+                    </td>
+                    <td colspan="3" style="width:140px;">
+                        <?php
+                        include('includes/mysql_connect.php');
+                        //query
+                        $sql=mysql_query("SELECT id, naziv FROM partneri");
+
+                        if(mysql_num_rows($sql)) {
+                            $select= '<select id="partner_id1" name="partner_id" class="select_big" autofocus="1" style="width:100%;display: inline-block;font-size:12px;margin-left:0px;">';
+                            while( $rs=mysql_fetch_array($sql)) {
+                                $select.='<option value='.$rs['id'].'>'.$rs['naziv'].'</option>';
+                            }
+                        }
+                        $select.='</select>';
+                        echo $select;
+                        ?>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label class="label_wide">Broj računa: </label>
+                    </td>
+                    <td colspan="3" style="width:40px;text-align: left">
+                    <input type="text" name="racun_no" class="input" style="width:80px;margin-left:0px;">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label class="label_wide">Datum uplate: </label>
+                    </td>
+                    <td colspan="3" style="width:40px;text-align: left">
+                    <input type="text" name="dat_upl" class="input_big datepicker" autocomplete="off" style="width:80px;margin-left:0px;">
+                    <label class="label_s">god.</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="4" style="width:40px;">
+                        <?php
+
+                        ?>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <?php
+                        /*<label class="label_wide">Iznos za uplatu: </label>
+                        </td>
+                        <td colspan="3" style="width:40px;">
+                            <input type="text" name="izn_za_upl" class="input" style="width:80px;margin-left:0px;text-align:right;border: none;">
+                            <!--<label class="label_s">dinara</label>-->
+                        </td>*/
+                        ?>
+                </tr>
+                <tr>
+                    <td>
+                        <label class="label_wide">Iznos uplate: </label>
+                    </td>
+                    <td colspan="3" style="width:40px;text-align: left">
+                    <input type="text" name="iznos_upl" class="input" style="width:80px;margin-left:0px;text-align:right;">
+                    <label class="label_s">dinara</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="4" style="text-align: center">
+                        <br/>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="4" style="text-align: center">
+                        <input type="submit" class="btn btn-xs btn-success" value="Sacuvaj"> <input class="btn btn-xs btn-danger" type="reset" value="Ponisti">
+                    </td>
+                </tr>
+            </table>
         </form>
     </div>
-    <div style="overflow:auto;max-height:500px;float:left;width:300px;">
-        <?php
-        include(('includes/mysql_connect.php'));
-        //query
-        $sql = mysql_query("select zaduzenja.*,partneri.naziv, statusi.status from zaduzenja
-                            inner join partneri on zaduzenja.partner_id = partneri.id
-                            inner join statusi on zaduzenja.status = statusi.id
-                            order by zaduzenja.racun_no");
-        echo "<table id='tabela'>";
-        echo "<tr><th>Račun No.</th><th>Korisnik</th><th>Status</th></td>";
-        if(mysql_num_rows($sql)) {
-            while($row = mysql_fetch_assoc($sql)) {
-                $racun_no = $row['racun_no'];
-                $naziv = $row['naziv'];
-                $status = $row['status'];
-                echo "<tr><td style='width:70px;'>".$racun_no."</td><td style='width:120px;'>".$naziv."</td><td style='width:100px;text-align:center;'>".$status."</td></tr>";
-            }
-        }
-        echo "</table>";
-        ?>
-    </div>
     <div>
-<!--
+    <!--
         <input type=button onClick="parent.location='partneri.php'" value='parent button'>
         <input type=button onClick="location.href='partneri.php'" value='href button'>
         <input type="button" value="PopUp" onclick="popUp('partneri.php');" />
@@ -179,7 +307,7 @@ echo $jj;
         </form>
         <br/>
         <input type=button onClick="parent.location='home.php'" value='Home page'>
--->
+    -->
     </div>
 </body>
 </html>

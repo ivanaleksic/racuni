@@ -9,7 +9,7 @@ if ($_SESSION['session'] > $_SESSION['inactive']) {
     include('includes/mysql_connect.php');
     //query
     $sql = mysql_query("SELECT * FROM partneri");
-    echo "<table id='tbl_partneri'>";
+    echo "<table id='tbl_partneri' class='odd_even_table'>";
     echo "<tr><th>ID</th><th>Naziv</th><th>Korisnik</th><th>Tekući račun</th><th>Model i poziv na broj</th></td>";
     $i = 0;
     if(mysql_num_rows($sql)){

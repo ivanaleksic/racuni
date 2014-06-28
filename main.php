@@ -60,7 +60,7 @@ function layout($page_id)
 
     <script type="text/javascript">
         $(function() {
-            $( ".datepicker" ).datepicker({ dateFormat: "yy-mm-dd", changeMonth: true, changeYear: true, yearRange:'-15:+5' }).val()
+            $( ".datepicker" ).datepicker({ dateFormat: "dd.mm.yy."/*"yy-mm-dd"*/, changeMonth: true, changeYear: true, yearRange:'-15:+15' }).val()
         })
         $(window).resize(function(){
             var height="";
@@ -82,10 +82,6 @@ function layout($page_id)
 <body>
 <div id="container" style="position:relative;width:1100px;margin: 20px auto 0;overflow:hidden;">
     <div id="header" style="background-color:#D8D8D8;line-height:12px;margin:0 auto;padding:6px 12px;text-align: center;">
-        <p><b>Ovde bi trebalo da bude neki naslov...</b></p>
-    </div>
-
-    <div id="header" style="background-color:#FFFFFF;line-height:20px;margin:0 auto;padding:6px 12px;border:1px solid #D8D8D8;">
         <?php
         include('includes/mysql_connect.php');
         $sql=mysql_query("SELECT id, naziv FROM partneri");
@@ -101,7 +97,22 @@ function layout($page_id)
         ?>
     </div>
 
-    <div id="content" style="background-color:#FFFFFF;overflow:auto;width:950px;float:left;padding:12px 12px;border-left:1px solid #D8D8D8;">
+<!--    <div id="header" style="background-color:#FFFFFF;line-height:20px;margin:0 auto;padding:6px 12px;border:1px solid #D8D8D8;">
+
+    </div>-->
+
+    <div id="sidebar" style="background-color:#D8D8D8;overflow:auto;width:150px;float:left;text-align:left;padding:12px 12px;border-left:1px solid #D8D8D8;">
+        <a href="main.php" class="btn btn-xs btn-default">Go to Home page</a><br />
+        <br />
+        <a href="main.php?page=zaduzenja" class="btn btn-xs">Zaduženja</a><br />
+        <a href="main.php?page=" class="btn btn-xs">Novo zaduženje</a><br />
+        <a href="main.php?page=uplate" class="btn btn-xs">Uplate</a><br />
+        <a href="main.php?page=" class="btn btn-xs">Nova uplata</a><br />
+        <a href="main.php?page=partneri" class="btn btn-xs">Partneri</a><br />
+        <a href="main.php?page=racuni" class="btn btn-xs">Računi</a><br />
+    </div>
+
+    <div id="content" style="background-color:#FFFFFF;overflow:auto;width:950px;padding:12px 12px;border-right:1px solid #D8D8D8;">
         <?php
         if(isset($_GET['page']))
         {
@@ -111,19 +122,8 @@ function layout($page_id)
         ?>
     </div>
 
-    <div id="sidebar" style="background-color:#D8D8D8;overflow:auto;width:150px;text-align:left;padding:12px 12px;border-right:1px solid #D8D8D8;">
-        <a href="home.php" class="btn btn-xs btn-default">Go to Home page</a><br />
-        <br />
-        <a href="home.php?page=zaduzenja" class="btn btn-xs">Zaduženja</a><br />
-        <a href="home.php?page=" class="btn btn-xs">Novo zaduženje</a><br />
-        <a href="home.php?page=uplate" class="btn btn-xs">Uplate</a><br />
-        <a href="home.php?page=" class="btn btn-xs">Nova uplata</a><br />
-        <a href="home.php?page=partneri" class="btn btn-xs">Partneri</a><br />
-        <a href="home.php?page=racuni" class="btn btn-xs">Računi</a><br />
-    </div>
-
     <div id="footer" style="background-color:#D8D8D8;clear:both;text-align:center;vertical-align:middle;line-height:40px;">
-        <a href="home.php" class="btn btn-xs btn-info">Copyright © Ivan Aleksić</a>
+        <a href="main.php" class="btn btn-xs btn-info">Copyright © Ivan Aleksić</a>
     </div>
 </div>
 </div>

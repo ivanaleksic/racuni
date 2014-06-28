@@ -12,7 +12,7 @@
             $_SESSION['username'] = $row['username'];
             $_SESSION['inactive'] = 300; // Timeout u sekundama
             $_SESSION['time'] = time(); // Postavljanje trenutnog vremena za vreme starta sesije
-            header("Location: home.php"); // Ako sesija nije istekla
+            header("Location: main.php"); // Ako sesija nije istekla
             exit;
         } else {
             header("Location: login.php"); //Ako je sesija istekla
