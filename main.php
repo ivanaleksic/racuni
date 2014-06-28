@@ -123,7 +123,7 @@ function layout($page_id)
     </div>
 
     <div id="footer" style="background-color:#D8D8D8;clear:both;text-align:center;vertical-align:middle;line-height:40px;">
-        <a href="main.php" class="btn btn-xs btn-info">Copyright © Ivan Aleksić</a>
+        <a href="main.php" class="btn btn-xs btn-info">Copyright © Ivan Aleksić 2014.</a>
     </div>
 </div>
 </div>

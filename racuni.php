@@ -41,7 +41,11 @@
             params += ', toolbar=no';
             window.open(url,'PHP Pop Up',params);
         }
-
+        function round(box) {
+            var x = document.getElementById(box.id).value;
+            var round_x = Number(x).toFixed(2);
+            document.getElementById(box.id).value = round_x;
+        }
         function submit_oba() {
             document.forms.unos_zad.submit();
             setTimeout(function(){document.forms.unos_upl.submit()},1000);
@@ -51,16 +55,26 @@
             document.forms["unos_zad"].reset();
             document.forms["unos_upl"].reset();
         }
+
     </script>
 </head>
 
 <?php
-/*function moja_funkcija($parm)
+/*$racun_no_upl = $_SESSION['racun_no'];
+$dat_upl = $_SESSION['dat_upl'];
+$iznos_upl = $_SESSION['iznos_upl'];
+    <script type="text/javascript">
+    function upis_u_form_upis($racun_no_upl,$dat_upl,$iznos_upl) {
+        document.getElementsByName('dat_upl').value = $iznos_upl;
+
+    }
+function moja_funkcija($parm)
 {
     return 'Moja funkcija koja se zove '.$parm;
 }
-*/?><!--
-$jj=moja_funkcija('idemo kuci');
+*/?>
+
+<!--$jj=moja_funkcija('idemo kuci');
 echo $jj;-->
 
 <body>
@@ -142,7 +156,7 @@ echo $jj;-->
                         <label class="label_wide">Iznos zaduženja: </label>
                     </td>
                     <td colspan="3" style="width:40px;text-align: left">
-                    <input type="text" name="iznos_zad" class="input" style="width:80px;margin-left:0px;text-align:right;">
+                    <input type="text" name="iznos_zad" id="iznos_zad_id" class="input"  onblur="round(this)" style="width:80px;margin-left:0px;text-align:right;">
                     <label class="label_s">dinara</label>
                     </td>
                 </tr>
@@ -179,7 +193,7 @@ echo $jj;-->
                         <label class="label_wide">Iznos popusta: </label>
                     </td>
                     <td colspan="3" style="width:40px;">
-                    <input type="text" name="pop_din" class="input" style="width:80px;margin-left:0px;text-align:right;">
+                    <input type="text" name="pop_din" id="pop_din_id" onblur="round(this)" class="input" style="width:80px;margin-left:0px;text-align:right;">
                     <label class="label_s">dinara</label>
 
                     </td>
@@ -288,7 +302,7 @@ echo $jj;-->
                         <label class="label_wide">Iznos uplate: </label>
                     </td>
                     <td colspan="3" style="width:40px;text-align: left">
-                    <input type="text" name="iznos_upl" class="input" style="width:80px;margin-left:0px;text-align:right;">
+                    <input type="text" id="iznos_upl_id" name="iznos_upl" onblur="round(this)" class="input" style="width:80px;margin-left:0px;text-align:right;">
                     <label class="label_s">dinara</label>
                     </td>
                 </tr>
