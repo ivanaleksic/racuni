@@ -1,7 +1,6 @@
 <?php
 /**
  * Provera da li je sesija istekla
- *
  * @return bool
  */
 function is_timeout() {

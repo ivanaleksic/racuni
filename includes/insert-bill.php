@@ -48,12 +48,6 @@ $_SESSION['mod_no'] = $mod_no;
 $_SESSION['poz_no'] = $poz_no;
 // Izlaz
 mysqli_close($con);
-header('Location: /racuni/main.php?page=racuni');
-exit();
-?>
-// Izlaz
-mysqli_close($con);
-$_SESSION['time'] = time();
-header('Location: /racuni/main.php?page=racuni');
+header('Location: /racuni/main.php?page=new-bill');
 exit();
 ?>

@@ -24,6 +24,6 @@ $_SESSION['dat_upl'] = $dat_upl;
 $_SESSION['iznos_upl'] = $iznos_upl;
 // Izlaz
 mysqli_close($con);
-header('Location: /racuni/main.php?page=racuni');
+header('Location: /racuni/main.php?page=new-payment');
 exit();
 ?>
