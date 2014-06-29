@@ -127,7 +127,7 @@ echo $jj;-->
 
 <body>
     <div style="overflow:auto;height:440px;">
-        <form name="unos_zad" action="includes/insert_zad.php" method="post">
+        <form name="unos_zad" action="includes/insert-bill.php" method="post">
             <table id="unos_zaduzenja" style="width:340px;float:left;margin-right:12px;" cellpadding="0" cellspacing="0">
                 <th colspan="4" style="margin:0;padding:2px;text-align:center">
                     <h5><b>Podaci o zaduženju</b></h5>
@@ -284,7 +284,7 @@ echo $jj;-->
             </table>
         </form>
         <!--Unos zaduzenja-->
-        <form name="unos_upl" action="includes/insert_upl.php" method="post">
+        <form name="unos_upl" action="includes/insert-payment.php" method="post">
             <table id="unos_zaduzenja" style="width:340px;" cellpadding="0" cellspacing="0">
                 <th colspan="4" style="margin:0;padding:2px;text-align:center">
                         <h5><b>Podaci o uplati</b></h5>

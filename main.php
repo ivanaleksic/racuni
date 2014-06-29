@@ -29,16 +29,22 @@ function layout($page_id)
             echo '<p></p>';
             break;
         case 'zaduzenja':
-            include('includes/zaduzenja.php');
+            include('includes/bills.php');
+            break;
+        case 'novo_zaduzenje':
+            include('new-bill.php');
             break;
         case 'uplate':
-            include('includes/uplate.php');
+            include('includes/payments.php');
+            break;
+        case 'nova_uplata':
+            include('new-payment.php');
             break;
         case 'racuni':
             include('racuni.php');
             break;
         case 'partneri':
-            include('includes/partneri.php');
+            include('includes/partners.php');
     }
 }
 ?>
@@ -103,9 +109,9 @@ function layout($page_id)
         <a href="main.php" class="btn btn-xs btn-default">Go to Home page</a><br />
         <br />
         <a href="main.php?page=zaduzenja" class="btn btn-xs">Zaduženja</a><br />
-        <a href="main.php?page=" class="btn btn-xs">Novo zaduženje</a><br />
+        <a href="main.php?page=novo_zaduzenje" class="btn btn-xs">Novo zaduženje</a><br />
         <a href="main.php?page=uplate" class="btn btn-xs">Uplate</a><br />
-        <a href="main.php?page=" class="btn btn-xs">Nova uplata</a><br />
+        <a href="main.php?page=nova_uplata" class="btn btn-xs">Nova uplata</a><br />
         <a href="main.php?page=partneri" class="btn btn-xs">Partneri</a><br />
         <a href="main.php?page=racuni" class="btn btn-xs">Računi</a><br />
     </div>
