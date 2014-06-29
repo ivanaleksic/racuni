@@ -72,8 +72,12 @@
             function round(box) {
                 /*Fiksiranje na dve decimale*/
                 var x = document.getElementById(box.id).value;
-                var round_x = Number(x).toFixed(2);
-                document.getElementById(box.id).value = round_x;
+                if(x != "") {
+                    var round_x = Number(x).toFixed(2);
+                    document.getElementById(box.id).value = round_x;
+                } else {
+                    document.getElementById(box.id).value = "";
+                }
             }
 
             function submit_oba() {
@@ -111,7 +115,13 @@
                 $("#id_racun_upl").val("<?php echo $racun_upl; ?>");
                 $("#id_dat_upl").val("<?php echo $dat_upl; ?>");
                 $("#id_iznos_upl").val("<?php echo $iznos_upl; ?>");
+
+                document.getElementById("id_partner_zad").options[0].disabled=true;
+                document.getElementById("id_status").options[0].disabled=true;
+                document.getElementById("id_pop_tip").options[0].disabled=true;
+                document.getElementById("id_partner_upl").options[0].disabled=true;
             });
+
         </script>
     </head>
 
@@ -135,11 +145,11 @@ echo $jj;-->
 
     <body>
         <div style="overflow:auto;height:440px;">
-            <form name="unos_zad" action="includes/insert-bill.php" method="post">
-                <table id="unos_zaduzenja" style="width:340px;float:left;margin-right:12px;" cellpadding="0" cellspacing="0">
-                    <th colspan="4" style="margin:0;padding:2px;text-align:center">
-                        <h5><b>Podaci o zaduženju</b></h5>
-                    </th>
+        <form name="insert-bill" action="includes/insert.php" method="post">
+            <table id="unos_zaduzenja" style="width:340px;float:left;margin-right:12px;" cellpadding="0" cellspacing="0">
+                <th colspan="4" style="margin:0;padding:11px 0px 10px 0px;text-align:center;vertical-align:middle;">
+                    <b>UNOS ZADUŽENJA I UPLATE</b>
+                </th>
                     <tr>
                         <td>
                             <label class="label_wide">Partner: </label>
@@ -292,11 +302,11 @@ echo $jj;-->
                 </table>
             </form>
             <!--Unos zaduzenja-->
-            <form name="unos_upl" action="includes/insert-payment.php" method="post">
-                <table id="unos_zaduzenja" style="width:340px;" cellpadding="0" cellspacing="0">
-                    <th colspan="4" style="margin:0;padding:2px;text-align:center">
-                            <h5><b>Podaci o uplati</b></h5>
-                    </th>
+        <form name="unos_upl" action="includes/insert.php" method="post">
+            <table id="unos_zaduzenja" style="width:340px;" cellpadding="0" cellspacing="0">
+                <th colspan="4" style="margin:0;padding:11px 0px 10px 0px;text-align:center;vertical-align: middle">
+                    <b>UNOS NOVE UPLATE</b>
+                </th>
                     <tr>
                         <td>
                             <label class="label_wide">Partner: </label>
@@ -405,13 +415,13 @@ echo $jj;-->
 
 <?php
     // Brisanje session unos_zad form podataka
-    $_SESSION['partner_zad'] = "1";
+    $_SESSION['partner_zad'] = "0";
     $_SESSION['racun_zad'] = "";
-    $_SESSION['status'] = "1";
+    $_SESSION['status'] = "0";
     $_SESSION['dat_zad'] = "";
     $_SESSION['dat_val'] = "";
     $_SESSION['iznos_zad'] = "";
-    $_SESSION['pop_tip'] = "1";
+    $_SESSION['pop_tip'] = "0";
     $_SESSION['pop_izn'] = "";
     $_SESSION['pop_din'] = "";
     $_SESSION['tr_no1'] = "";
@@ -420,7 +430,7 @@ echo $jj;-->
     $_SESSION['mod_no'] = "";
     $_SESSION['poz_no'] = "";
     // Brisanje session unos_upl form podataka
-    $_SESSION['partner_upl'] = "1";
+    $_SESSION['partner_upl'] = "0";
     $_SESSION['racun_upl'] = "";
     $_SESSION['dat_upl'] = "";
     $_SESSION['iznos_upl'] =  "";

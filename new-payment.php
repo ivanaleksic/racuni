@@ -42,16 +42,36 @@
                 }
             }
 
-            $(document).ready(function() {
+            document.ready=function() {
                 /**
-                 * Popunjavanje formulara
-                 *
+                 * Popunjavanje formulara sacuvanim vrednostima
+                 * bre sumbita
                  */
                 $("#id_partner_upl").val(<?php echo $partner_upl; ?>);
                 $("#id_racun_upl").val("<?php echo $racun_upl; ?>");
                 $("#id_dat_upl").val("<?php echo $dat_upl; ?>");
                 $("#id_iznos_upl").val("<?php echo $iznos_upl; ?>");
-            });
+                /**
+                 * Disabled --- izaberi --- opcija u dropdown-u
+                 * Disabled Submit form button bez izbora dropdown-a
+                 */
+                document.getElementById("id_partner_upl").options[0].disabled=true;
+                document.getElementById("id_submit").disabled=true;
+            }
+
+            document.onclick=function() {
+                /**
+                 * Ako je izabran dropdown
+                 * Submit form button enabled
+                 */
+                var a = document.getElementById("id_partner_upl").value;
+                if(a != "0") {
+                    document.getElementById("id_submit").disabled=false;
+                } else {
+                    document.getElementById("id_submit").disabled=true;
+                }
+            }
+
         </script>
     </head>
     <body>
@@ -133,7 +153,7 @@
                     </tr>
                     <tr>
                         <td colspan="4" style="text-align: center">
-                            <input type="submit" class="btn btn-xs btn-success" value="Sačuvaj"> <input type="reset" class="btn btn-xs btn-danger" value="Poništi">
+                            <input type="submit" id="id_submit" class="btn btn-xs btn-success" value="Sačuvaj"> <input type="reset" class="btn btn-xs btn-danger" value="Poništi">
                         </td>
                     </tr>
                 </table>
@@ -152,7 +172,7 @@
  * Brisanje session unos_upl form podataka
  *
  */
-    $_SESSION['partner_upl'] = "1";
+    $_SESSION['partner_upl'] = "0";
     $_SESSION['racun_upl'] = "";
     $_SESSION['dat_upl'] = "";
     $_SESSION['iznos_upl'] =  "";

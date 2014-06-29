@@ -20,22 +20,22 @@ function layout($page_id) {
             echo '<h3>Under construction...</h3>';
             echo '<p></p>';
             break;
-        case 'zaduzenja':
+        case 'bills':
             include('includes/bills.php');
             break;
-        case 'novo_zaduzenje':
+        case 'new-bill':
             include('new-bill.php');
             break;
-        case 'uplate':
+        case 'payments':
             include('includes/payments.php');
             break;
-        case 'nova_uplata':
+        case 'new-payment':
             include('new-payment.php');
             break;
         case 'racuni':
             include('racuni.php');
             break;
-        case 'partneri':
+        case 'partners':
             include('includes/partners.php');
     }
 }
@@ -96,11 +96,11 @@ function layout($page_id) {
             <div id="sidebar" style="background-color:#FFFFFF;overflow:auto;width:150px;float:left;text-align:left;padding:12px 12px; border-left:1px solid #D8D8D8;">
                 <a href="main.php" class="btn btn-xs btn-default">Go to Home page</a><br />
                 <br />
-                <a href="main.php?page=zaduzenja" class="btn btn-xs">Zaduženja</a><br />
-                <a href="main.php?page=novo_zaduzenje" class="btn btn-xs">Novo zaduženje</a><br />
-                <a href="main.php?page=uplate" class="btn btn-xs">Uplate</a><br />
-                <a href="main.php?page=nova_uplata" class="btn btn-xs">Nova uplata</a><br />
-                <a href="main.php?page=partneri" class="btn btn-xs">Partneri</a><br />
+                <a href="main.php?page=bills" class="btn btn-xs">Zaduženja</a><br />
+                <a href="main.php?page=new-bill" class="btn btn-xs">Novo zaduženje</a><br />
+                <a href="main.php?page=payments" class="btn btn-xs">Uplate</a><br />
+                <a href="main.php?page=new-payment" class="btn btn-xs">Nova uplata</a><br />
+                <a href="main.php?page=partners" class="btn btn-xs">Partneri</a><br />
                 <a href="main.php?page=racuni" class="btn btn-xs">Računi</a><br />
             </div>
             <div id="content" style="background-color:#FFFFFF;overflow:auto;width:950px;padding:12px 12px;border-left:1px solid #D8D8D8;border-right:1px solid #D8D8D8;">

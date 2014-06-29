@@ -10,13 +10,13 @@
             $row = mysql_fetch_array($sql);
             session_start();
             // Brisanje session unos_zad form podataka
-            $_SESSION['partner_zad'] = "1";
+            $_SESSION['partner_zad'] = "0";
             $_SESSION['racun_zad'] = "";
-            $_SESSION['status'] = "1";
+            $_SESSION['status'] = "0";
             $_SESSION['dat_zad'] = "";
             $_SESSION['dat_val'] = "";
             $_SESSION['iznos_zad'] = "";
-            $_SESSION['pop_tip'] = "1";
+            $_SESSION['pop_tip'] = "0";
             $_SESSION['pop_izn'] = "";
             $_SESSION['pop_din'] = "";
             $_SESSION['tr_no1'] = "";
@@ -25,13 +25,13 @@
             $_SESSION['mod_no'] = "";
             $_SESSION['poz_no'] = "";
             // Brisanje session unos_upl form podataka
-            $_SESSION['partner_upl'] = "1";
+            $_SESSION['partner_upl'] = "0";
             $_SESSION['racun_upl'] = "";
             $_SESSION['dat_upl'] = "";
             $_SESSION['iznos_upl'] =  "";
             // Postavljanje username-a i timeout vremena
             $_SESSION['username'] = $row['username'];
-            $_SESSION['inactive'] = 300;
+            $_SESSION['inactive'] = 30;
             $_SESSION['time'] = time(); // Vreme starta sesije = Trenutno vreme
             header("Location: main.php"); // Ako sesija nije istekla
             exit;

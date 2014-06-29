@@ -8,9 +8,15 @@ if ($_SESSION['session'] > $_SESSION['inactive']) {
 } else {
     include('includes/mysql_connect.php');
     //query
-    $sql = mysql_query("SELECT * FROM partneri");
+    $sql = mysql_query("SELECT * FROM partneri WHERE id > 0");
     echo "<table id='tbl_partneri' class='odd_even_table'>";
-    echo "<tr><th>ID</th><th>Naziv</th><th>Korisnik</th><th>Tekući račun</th><th>Model i poziv na broj</th></td>";
+    echo "<tr>
+        <th>ID</th>
+        <th>Naziv<br />partnera</th>
+        <th>Korisnik</th>
+        <th>Tekući račun</th>
+        <th>Model i poziv na broj</th>
+    </td>";
     $i = 0;
     if(mysql_num_rows($sql)){
         while($row = mysql_fetch_assoc($sql)){

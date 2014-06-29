@@ -52,10 +52,10 @@
                 }
             }
 
-            $(document).ready(function() {
+            document.ready=function() {
                 /**
-                 * Popunjavanje formulara
-                 *
+                 * Popunjavanje formulara sacuvanim vrednostima
+                 * bre sumbita
                  */
                 $("#id_partner_zad").val(<?php echo $partner_zad; ?>);
                 $("#id_racun_zad").val("<?php echo $racun_zad; ?>");
@@ -71,7 +71,31 @@
                 $("#id_tr_no3").val("<?php echo $tr_no3; ?>");
                 $("#id_mod_no").val("<?php echo $mod_no; ?>");
                 $("#id_poz_no").val("<?php echo $poz_no; ?>");
-            });
+                /**
+                 * Disabled --- izaberi --- opcija u dropdown-u
+                 * Disabled Submit form button bez izbora dropdown-a
+                 */
+                document.getElementById("id_partner_zad").options[0].disabled=true;
+                document.getElementById("id_status").options[0].disabled=true;
+                document.getElementById("id_pop_tip").options[0].disabled=true;
+                document.getElementById("id_submit").disabled=true;
+            };
+
+            document.onclick=function() {
+                /**
+                 * Ako su izabrani svi dropdown-i
+                 * Submit form button enabled
+                 */
+                var a = document.getElementById("id_partner_zad").value;
+                var b = document.getElementById("id_status").value;
+                var c = document.getElementById("id_pop_tip").value;
+                if(a != "0" && b != "0" && c != "0") {
+                        document.getElementById("id_submit").disabled=false;
+                    } else {
+                        document.getElementById("id_submit").disabled=true;
+                    }
+            }
+
         </script>
     </head>
     <body>
@@ -79,7 +103,7 @@
             <form name="insert-bill" action="includes/insert-bill.php" method="post">
                 <table id="unos_zaduzenja" style="width:340px;float:left;margin-right:12px;" cellpadding="0" cellspacing="0">
                     <th colspan="4" style="margin:0;padding:11px 0px 10px 0px;text-align:center;vertical-align:middle;">
-                        <b>Podaci o zaduženju</b>
+                        <b>UNOS NOVOG ZADUŽENJA</b>
                     </th>
                     <tr>
                         <td>
@@ -92,7 +116,7 @@
                             $sql=mysql_query("SELECT id, naziv FROM partneri");
 
                             if(mysql_num_rows($sql)) {
-                                $select= '<select id="id_partner_zad" name="partner_zad" class="select_big" autofocus="1" style="width:100%;display: inline-block;font-size:12px;margin-left:0px;">';
+                                $select= '<select id="id_partner_zad" name="partner_zad" onclick="is_selected(this);" class="select_big" autofocus="1" style="width:100%;display: inline-block;font-size:12px;margin-left:0px;">';
                                 while( $rs=mysql_fetch_array($sql)) {
                                     $select.='<option value='.$rs['id'].'>'.$rs['naziv'].'</option>';
                                 }
@@ -153,7 +177,7 @@
                             <label class="label_wide">Iznos zaduženja: </label>
                         </td>
                         <td colspan="3" style="width:40px;text-align: left">
-                            <input type="text" id="id_iznos_zad" name="iznos_zad" class="input"  onblur="round(this)" style="width:80px;margin-left:0px;text-align:right;">
+                            <input type="text" id="id_iznos_zad" name="iznos_zad" class="input" onblur="round(this)" style="width:80px;margin-left:0px;text-align:right;">
                             <label class="label_s">dinara</label>
                         </td>
                     </tr>
@@ -227,7 +251,7 @@
                     </tr>
                     <tr>
                         <td colspan="4" style="text-align: center">
-                            <input type="submit" class="btn btn-xs btn-success" value="Sačuvaj"> <input type="reset" class="btn btn-xs btn-danger" value="Poništi">
+                            <input id="id_submit" type="submit" class="btn btn-xs btn-success" value="Sačuvaj"> <input type="reset" class="btn btn-xs btn-danger" value="Poništi">
                         </td>
                     </tr>
                 </table>
@@ -248,13 +272,13 @@
  * Brisanje session unos_upl form podataka
  *
  */
-    $_SESSION['partner_zad'] = "1";
+    $_SESSION['partner_zad'] = "0";
     $_SESSION['racun_zad'] = "";
-    $_SESSION['status'] = "1";
+    $_SESSION['status'] = "0";
     $_SESSION['dat_zad'] = "";
     $_SESSION['dat_val'] = "";
     $_SESSION['iznos_zad'] = "";
-    $_SESSION['pop_tip'] = "1";
+    $_SESSION['pop_tip'] = "0";
     $_SESSION['pop_izn'] = "";
     $_SESSION['pop_din'] = "";
     $_SESSION['tr_no1'] = "";
