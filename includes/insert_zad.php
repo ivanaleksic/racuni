@@ -3,8 +3,8 @@
 include('mysqli_connect.php');
 // Escape variables for security
 $dat_izm = date("Y-m-d H:i:s");
-$partner_id = mysqli_real_escape_string($con, $_POST['partner_id']);
-$racun_no = mysqli_real_escape_string($con, $_POST['racun_no']);
+$partner_id = mysqli_real_escape_string($con, $_POST['partner_zad']);
+$racun_no = mysqli_real_escape_string($con, $_POST['racun_upl']);
 $status = mysqli_real_escape_string($con, $_POST['status']);
 $dat_zad = mysqli_real_escape_string($con, $_POST['dat_zad']);
 $dat_val = mysqli_real_escape_string($con, $_POST['dat_val']);

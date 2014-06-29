@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html lang="sr">
-
+<!--Zapamcene vrednosti formulara-->
+<?php
+$partner_upl = $_SESSION['partner_upl'];
+$racun_upl = $_SESSION['racun_upl'];
+$dat_upl = $_SESSION['dat_upl'];
+$iznos_upl = $_SESSION['iznos_upl'];
+echo $partner_upl .' '. $racun_upl .' '. $dat_upl .' '. $iznos_upl;
+?>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 
@@ -41,6 +48,7 @@
             params += ', toolbar=no';
             window.open(url,'PHP Pop Up',params);
         }
+
         function round(box) {
             var x = document.getElementById(box.id).value;
             var round_x = Number(x).toFixed(2);
@@ -55,6 +63,13 @@
             document.forms["unos_zad"].reset();
             document.forms["unos_upl"].reset();
         }
+
+        $(document).ready(function() {
+            $("#id_partner_upl").val(<?php echo $partner_upl; ?>);
+            $("#id_racun_upl").val("<?php echo $racun_upl; ?>");
+            $("#id_dat_upl").val("<?php echo $dat_upl; ?>");
+            $("#id_iznos_upl").val("<?php echo $iznos_upl; ?>");
+        });
 
     </script>
 </head>
@@ -95,7 +110,7 @@ echo $jj;-->
                         $sql=mysql_query("SELECT id, naziv FROM partneri");
 
                         if(mysql_num_rows($sql)) {
-                            $select= '<select id="partner_id" name="partner_id" class="select_big" autofocus="1" style="width:100%;display: inline-block;font-size:12px;margin-left:0px;">';
+                            $select= '<select id="id_partner_zad" name="partner_zad" class="select_big" autofocus="1" style="width:100%;display: inline-block;font-size:12px;margin-left:0px;">';
                             while( $rs=mysql_fetch_array($sql)) {
                                 $select.='<option value='.$rs['id'].'>'.$rs['naziv'].'</option>';
                             }
@@ -110,7 +125,7 @@ echo $jj;-->
                         <label class="label_wide">Broj računa: </label>
                     </td>
                     <td colspan="3" style="width:40px;text-align: left">
-                        <input type="text" name="racun_no" class="input" style="width:80px;margin-left:0px;">
+                        <input type="text" name="racun_zad" class="input" style="width:80px;margin-left:0px;">
                     </td>
                 </tr>
                 <tr>
@@ -252,7 +267,7 @@ echo $jj;-->
                         $sql=mysql_query("SELECT id, naziv FROM partneri");
 
                         if(mysql_num_rows($sql)) {
-                            $select= '<select id="partner_id1" name="partner_id" class="select_big" autofocus="1" style="width:100%;display: inline-block;font-size:12px;margin-left:0px;">';
+                            $select= '<select id="id_partner_upl" name="partner_upl" class="select_big" autofocus="1" style="width:100%;display: inline-block;font-size:12px;margin-left:0px;">';
                             while( $rs=mysql_fetch_array($sql)) {
                                 $select.='<option value='.$rs['id'].'>'.$rs['naziv'].'</option>';
                             }
@@ -267,7 +282,7 @@ echo $jj;-->
                         <label class="label_wide">Broj računa: </label>
                     </td>
                     <td colspan="3" style="width:40px;text-align: left">
-                    <input type="text" name="racun_no" class="input" style="width:80px;margin-left:0px;">
+                    <input type="text" id="id_racun_upl" name="racun_upl" class="input" style="width:80px;margin-left:0px;">
                     </td>
                 </tr>
                 <tr>
@@ -275,7 +290,7 @@ echo $jj;-->
                         <label class="label_wide">Datum uplate: </label>
                     </td>
                     <td colspan="3" style="width:40px;text-align: left">
-                    <input type="text" name="dat_upl" class="input_big datepicker" autocomplete="off" style="width:80px;margin-left:0px;">
+                    <input type="text" id="id_dat_upl" name="dat_upl" class="input_big datepicker" autocomplete="off" style="width:80px;margin-left:0px;">
                     <label class="label_s">god.</label>
                     </td>
                 </tr>
@@ -302,7 +317,7 @@ echo $jj;-->
                         <label class="label_wide">Iznos uplate: </label>
                     </td>
                     <td colspan="3" style="width:40px;text-align: left">
-                    <input type="text" id="iznos_upl_id" name="iznos_upl" onblur="round(this)" class="input" style="width:80px;margin-left:0px;text-align:right;">
+                    <input type="text" id="id_iznos_upl" name="iznos_upl" onblur="round(this)" class="input" style="width:80px;margin-left:0px;text-align:right;">
                     <label class="label_s">dinara</label>
                     </td>
                 </tr>
@@ -336,3 +351,10 @@ echo $jj;-->
     </div>
 </body>
 </html>
+<!--Na dno racuni.php-->
+<?php
+$_SESSION['partner_upl'] = "";
+$_SESSION['racun_upl'] = "";
+$_SESSION['dat_upl'] = "";
+$_SESSION['iznos_upl'] = "";
+?>

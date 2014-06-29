@@ -9,8 +9,13 @@
         if(mysql_num_rows($sql) == 1) {
             $row = mysql_fetch_array($sql);
             session_start();
+            $_SESSION['partner_upl'] = "1";
+            $_SESSION['racun_upl'] = "";
+            $_SESSION['dat_upl'] = "";
+            $_SESSION['iznos_upl'] =  "";
+
             $_SESSION['username'] = $row['username'];
-            $_SESSION['inactive'] = 300; // Timeout u sekundama
+            $_SESSION['inactive'] = 30; // Timeout u sekundama
             $_SESSION['time'] = time(); // Postavljanje trenutnog vremena za vreme starta sesije
             header("Location: main.php"); // Ako sesija nije istekla
             exit;
