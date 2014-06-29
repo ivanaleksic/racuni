@@ -12,12 +12,12 @@ echo "<tr >
     </td>";
 if(mysql_num_rows($sql)) {
     while($row = mysql_fetch_assoc($sql)) {
-        $racun_no = $row['racun_no'];
+        $racun_upl = $row['racun_no'];
         $naziv = $row['naziv'];
         $dat_upl = $row['dat_upl'];
         $iznos_upl = $row['iznos_upl'];
         echo "<tr>
-        <td>".$racun_no."</td>
+        <td>".$racun_upl."</td>
         <td>".$naziv."</td>
         <td>".$dat_upl."</td>
         <td style='text-align:right;'>".$iznos_upl."</td>

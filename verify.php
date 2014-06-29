@@ -9,18 +9,34 @@
         if(mysql_num_rows($sql) == 1) {
             $row = mysql_fetch_array($sql);
             session_start();
+            // Brisanje session unos_zad form podataka
+            $_SESSION['partner_zad'] = "1";
+            $_SESSION['racun_zad'] = "";
+            $_SESSION['status'] = "1";
+            $_SESSION['dat_zad'] = "";
+            $_SESSION['dat_val'] = "";
+            $_SESSION['iznos_zad'] = "";
+            $_SESSION['pop_tip'] = "1";
+            $_SESSION['pop_izn'] = "";
+            $_SESSION['pop_din'] = "";
+            $_SESSION['tr_no1'] = "";
+            $_SESSION['tr_no2'] = "";
+            $_SESSION['tr_no3'] = "";
+            $_SESSION['mod_no'] = "";
+            $_SESSION['poz_no'] = "";
+            // Brisanje session unos_upl form podataka
             $_SESSION['partner_upl'] = "1";
             $_SESSION['racun_upl'] = "";
             $_SESSION['dat_upl'] = "";
             $_SESSION['iznos_upl'] =  "";
-
+            // Postavljanje username-a i timeout vremena
             $_SESSION['username'] = $row['username'];
-            $_SESSION['inactive'] = 30; // Timeout u sekundama
-            $_SESSION['time'] = time(); // Postavljanje trenutnog vremena za vreme starta sesije
+            $_SESSION['inactive'] = 300;
+            $_SESSION['time'] = time(); // Vreme starta sesije = Trenutno vreme
             header("Location: main.php"); // Ako sesija nije istekla
             exit;
         } else {
-            header("Location: login.php"); //Ako je sesija istekla
+            header("Location: login.php"); //Ako je sesija istekla, idi na login stranu
             exit;
         }
     } else {    //Ako nije bilo submita forma, idi na login stranu

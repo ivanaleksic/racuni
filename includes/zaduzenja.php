@@ -44,7 +44,7 @@ if(mysql_num_rows($sql)) {
         <td style='text-align:right;'>".$pop_izn."</td>
         <td style='text-align:right;'>".$pop_din."</td>
         <td>".$tr_no."</td>
-        <td>".$mod_no." ".$tr_no."</td>
+        <td>".$mod_no." ".$poz_no."</td>
         </tr>";
     }
 }
