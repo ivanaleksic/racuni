@@ -59,7 +59,7 @@
                 document.getElementById("id_submit").disabled=true;
             }
 
-            document.onclick=function() {
+            document.onchange=function() {
                 /**
                  * Ako je izabran dropdown
                  * Submit form button enabled
@@ -159,7 +159,7 @@
                 </table>
             </form>
         </div>
-        <div style="text-align: center">
+        <div style="text-align: left">
             <?php
             echo 'Partner ID: ' . $partner_upl .' racun: '. $racun_upl .' dat upl: '. $dat_upl .' iznos: '. $iznos_upl;
             ?>

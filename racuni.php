@@ -20,8 +20,6 @@
     $mod_no = $_SESSION['mod_no'];
     $poz_no = $_SESSION['poz_no'];
     /*unos_upl*/
-    $partner_upl = $_SESSION['partner_upl'];
-    $racun_upl = $_SESSION['racun_upl'];
     $dat_upl = $_SESSION['dat_upl'];
     $iznos_upl = $_SESSION['iznos_upl'];
 ?>
@@ -80,9 +78,14 @@
                 }
             }
 
-            function submit_oba() {
-                document.forms.unos_zad.submit();
-                setTimeout(function(){document.forms.unos_upl.submit()},1000);
+            function partner_ch() {
+                partner = document.getElementById('id_partner_zad').options[document.getElementById('id_partner_zad').selectedIndex].text;
+                document.getElementById("id_partner_upl").value = partner;
+            }
+
+            function racun_no_ch() {
+                racun = document.getElementById('id_racun_zad').value;
+                document.getElementById("id_racun_upl").value = racun;
             }
 
             function clear_oba() {
@@ -90,9 +93,9 @@
                 document.forms["unos_upl"].reset();
             }
 
-            $(document).ready(function() {
+            document.ready=function() {
                 /*
-                * Popunjavanje formulara unos_zad
+                * Popunjavanje formulara
                 */
                 $("#id_partner_zad").val(<?php echo $partner_zad; ?>);
                 $("#id_racun_zad").val("<?php echo $racun_zad; ?>");
@@ -108,19 +111,41 @@
                 $("#id_tr_no3").val("<?php echo $tr_no3; ?>");
                 $("#id_mod_no").val("<?php echo $mod_no; ?>");
                 $("#id_poz_no").val("<?php echo $poz_no; ?>");
-                /*
-                * Popunjavanje formulara unos_upl
-                */
-                $("#id_partner_upl").val(<?php echo $partner_upl; ?>);
-                $("#id_racun_upl").val("<?php echo $racun_upl; ?>");
+                $("#id_racun_upl").val("<?php echo $racun_zad; ?>");
                 $("#id_dat_upl").val("<?php echo $dat_upl; ?>");
                 $("#id_iznos_upl").val("<?php echo $iznos_upl; ?>");
 
                 document.getElementById("id_partner_zad").options[0].disabled=true;
                 document.getElementById("id_status").options[0].disabled=true;
                 document.getElementById("id_pop_tip").options[0].disabled=true;
-                document.getElementById("id_partner_upl").options[0].disabled=true;
-            });
+
+                partner = document.getElementById('id_partner_zad').options[document.getElementById('id_partner_zad').selectedIndex].text;
+                document.getElementById("id_partner_upl").value = 'partner';
+
+                document.getElementById("id_submit").disabled=true;
+            };
+
+            document.onchange=function() {
+                /**
+                 * Ako su izabrani svi dropdown-i
+                 * Submit form button enabled
+                 */
+                var a = document.getElementById("id_partner_zad").value;
+                var b = document.getElementById("id_status").value;
+                var c = document.getElementById("id_pop_tip").value;
+                if(a != "0" && b != "0" && c != "0") {
+                    document.getElementById("id_submit").disabled=false;
+                } else {
+                    document.getElementById("id_submit").disabled=true;
+                }
+            }
+            function tekuci_rn() {
+                var str = "265-435382000-63";
+                var a = str.indexOf("-") + 1;
+                var b = str.lastIndexOf("-");
+                var c = str.substring(a, b);
+                document.getElementById("demo").innerHTML = c;
+            }
 
         </script>
     </head>
@@ -145,11 +170,11 @@ echo $jj;-->
 
     <body>
         <div style="overflow:auto;height:440px;">
-        <form name="insert-bill" action="includes/insert.php" method="post">
-            <table id="unos_zaduzenja" style="width:340px;float:left;margin-right:12px;" cellpadding="0" cellspacing="0">
-                <th colspan="4" style="margin:0;padding:11px 0px 10px 0px;text-align:center;vertical-align:middle;">
-                    <b>UNOS ZADUŽENJA I UPLATE</b>
-                </th>
+            <form name="insert_both" action="includes/insert.php" method="post">
+                <table id="id_tbl_zad" style="width:340px;float:left;margin-right:12px;" cellpadding="0" cellspacing="0">
+                    <th colspan="4" style="margin:0;padding:11px 0px 10px 0px;text-align:center;vertical-align:middle;">
+                        <b>UNOS NOVOG ZADUŽENJA</b>
+                    </th>
                     <tr>
                         <td>
                             <label class="label_wide">Partner: </label>
@@ -161,7 +186,7 @@ echo $jj;-->
                             $sql=mysql_query("SELECT id, naziv FROM partneri");
 
                             if(mysql_num_rows($sql)) {
-                                $select= '<select id="id_partner_zad" name="partner_zad" class="select_big" autofocus="1" style="width:100%;display: inline-block;font-size:12px;margin-left:0px;">';
+                                $select= '<select id="id_partner_zad" name="partner_zad" onchange="partner_ch()" class="select_big" autofocus="1" style="width:100%;display: inline-block;font-size:12px;margin-left:0px;">';
                                 while( $rs=mysql_fetch_array($sql)) {
                                     $select.='<option value='.$rs['id'].'>'.$rs['naziv'].'</option>';
                                 }
@@ -176,7 +201,7 @@ echo $jj;-->
                             <label class="label_wide">Broj računa: </label>
                         </td>
                         <td colspan="3" style="width:40px;text-align: left">
-                            <input type="text" id="id_racun_zad" name="racun_zad" class="input" style="width:80px;margin-left:0px;text-align:center;">
+                            <input type="text" id="id_racun_zad" name="racun_zad" onchange="racun_no_ch()" class="input" style="width:80px;margin-left:0px;text-align:center;">
                         </td>
                     </tr>
                     <tr>
@@ -294,38 +319,18 @@ echo $jj;-->
                             <br/>
                         </td>
                     </tr>
-                        <tr>
-                            <td colspan="4" style="text-align: center">
-                                <input type="submit" class="btn btn-xs btn-success" value="Sačuvaj"> <input type="reset" class="btn btn-xs btn-danger" value="Poništi">
-                            </td>
-                    </tr>
                 </table>
-            </form>
-            <!--Unos zaduzenja-->
-        <form name="unos_upl" action="includes/insert.php" method="post">
-            <table id="unos_zaduzenja" style="width:340px;" cellpadding="0" cellspacing="0">
-                <th colspan="4" style="margin:0;padding:11px 0px 10px 0px;text-align:center;vertical-align: middle">
-                    <b>UNOS NOVE UPLATE</b>
-                </th>
+                <!--Unos zaduzenja-->
+                <table id="id_tbl_upl" style="width:340px;" cellpadding="0" cellspacing="0">
+                    <th colspan="3" style="margin:0;padding:11px 0px 10px 0px;text-align:center;vertical-align: middle">
+                        <b>UNOS NOVE UPLATE</b>
+                    </th>
                     <tr>
                         <td>
                             <label class="label_wide">Partner: </label>
                         </td>
-                        <td colspan="3" style="width:140px;">
-                            <?php
-                            include('includes/mysql_connect.php');
-                            //query
-                            $sql=mysql_query("SELECT id, naziv FROM partneri");
-
-                            if(mysql_num_rows($sql)) {
-                                $select= '<select id="id_partner_upl" name="partner_upl" class="select_big" autofocus="1" style="width:100%;display: inline-block;font-size:12px;margin-left:0px;">';
-                                while( $rs=mysql_fetch_array($sql)) {
-                                    $select.='<option value='.$rs['id'].'>'.$rs['naziv'].'</option>';
-                                }
-                            }
-                            $select.='</select>';
-                            echo $select;
-                            ?>
+                        <td colspan="2" style="width:140px;">
+                            <input type="text" id="id_partner_upl" name="partner_upl" class="input" disabled="disabled" style="width:100%;margin-left:0px;text-align:center;">
                         </td>
                     </tr>
                     <tr>
@@ -333,20 +338,22 @@ echo $jj;-->
                             <label class="label_wide">Broj računa: </label>
                         </td>
                         <td colspan="3" style="width:40px;text-align: left">
-                        <input type="text" id="id_racun_upl" name="racun_upl" class="input" style="width:80px;margin-left:0px;">
+                            <input type="text" id="id_racun_upl" name="racun_upl" class="input" disabled="disabled" style="width:80px;margin-left:0px;text-align:center;">
                         </td>
+                    </tr>
+                    <tr>
                     </tr>
                     <tr>
                         <td>
                             <label class="label_wide">Datum uplate: </label>
                         </td>
-                        <td colspan="3" style="width:40px;text-align: left">
+                        <td colspan="2" style="width:140px;">
                         <input type="text" id="id_dat_upl" name="dat_upl" class="input_big datepicker" autocomplete="off" style="width:80px;margin-left:0px;">
                         <label class="label_s">god.</label>
                         </td>
                     </tr>
                     <tr>
-                        <td colspan="4" style="width:40px;">
+                        <td colspan="2" style="width:40px;">
                             <?php
 
                             ?>
@@ -367,25 +374,25 @@ echo $jj;-->
                         <td>
                             <label class="label_wide">Iznos uplate: </label>
                         </td>
-                        <td colspan="3" style="width:40px;text-align: left">
+                        <td colspan="2" style="width:40px;text-align: left">
                         <input type="text" id="id_iznos_upl" name="iznos_upl" onblur="round(this)" class="input" style="width:80px;margin-left:0px;text-align:right;">
                         <label class="label_s">dinara</label>
                         </td>
                     </tr>
                     <tr>
-                        <td colspan="4" style="text-align: center">
+                        <td colspan="3" style="text-align: center">
                             <br/>
                         </td>
                     </tr>
                     <tr>
-                        <td colspan="4" style="text-align: center">
-                            <input type="submit" class="btn btn-xs btn-success" value="Sačuvaj"> <input type="reset" class="btn btn-xs btn-danger" value="Poništi">
+                        <td colspan="3" style="text-align: center">
+                            <input type="submit" id="id_submit" class="btn btn-xs btn-success" value="Sačuvaj"> <input type="reset" class="btn btn-xs btn-danger" value="Poništi">
                         </td>
                     </tr>
                 </table>
             </form>
         </div>
-        <div style="text-align: center">
+        <div style="text-align: left">
             <?php
             echo 'Partner ID: ' . $partner_zad .' racun: '. $racun_zad .' status ID: '. $status .' dat zad: '. $dat_zad .' dat val: '.
                 $dat_val .' iznos: '. $iznos_zad .' pop ID: '. $pop_tip .' pop izn: '. $pop_izn .' pop din: '. $pop_din .' tr br: '.
@@ -393,7 +400,7 @@ echo $jj;-->
             ?>
             <br />
             <?php
-            echo 'Partner ID: ' . $partner_upl .' racun: '. $racun_upl .' dat upl: '. $dat_upl .' iznos: '. $iznos_upl;
+            echo 'Partner ID: ' . $partner_zad .' racun: '. $racun_zad .' dat upl: '. $dat_upl .' iznos: '. $iznos_upl;
             ?>
         <!--
             <input type="button" class="btn btn-xs btn-success" value="Sačuvaj sve" onClick="submit_oba()"> <input type="button" class="btn btn-xs btn-danger" value="Poništi sve" onClick="clear_oba()">
@@ -430,8 +437,6 @@ echo $jj;-->
     $_SESSION['mod_no'] = "";
     $_SESSION['poz_no'] = "";
     // Brisanje session unos_upl form podataka
-    $_SESSION['partner_upl'] = "0";
-    $_SESSION['racun_upl'] = "";
     $_SESSION['dat_upl'] = "";
     $_SESSION['iznos_upl'] =  "";
 ?>

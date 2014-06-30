@@ -12,7 +12,7 @@ echo "<tr >
     <th style='width:110px;text-align: center;'>Status</th>
     <th style='width:65px;text-align: center;'>Datum zaduženja</th>
     <th style='width:65px;text-align: center;'>Datum valute</th>
-    <th style='width:50px;text-align: center;'>Iznos uplate</th>
+    <th style='width:50px;text-align: center;'>Iznos zaduženja</th>
     <th style='width:110px;text-align: center;'>Vrsta popusta</th>
     <th style='width:20px;text-align: center;'>Pop</th>
     <th style='width:50px;text-align: center;'>Iznos popusta</th>

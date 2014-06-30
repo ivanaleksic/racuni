@@ -31,7 +31,7 @@
             $_SESSION['iznos_upl'] =  "";
             // Postavljanje username-a i timeout vremena
             $_SESSION['username'] = $row['username'];
-            $_SESSION['inactive'] = 30;
+            $_SESSION['inactive'] = 300;
             $_SESSION['time'] = time(); // Vreme starta sesije = Trenutno vreme
             header("Location: main.php"); // Ako sesija nije istekla
             exit;

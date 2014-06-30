@@ -81,7 +81,7 @@
                 document.getElementById("id_submit").disabled=true;
             };
 
-            document.onclick=function() {
+            document.onchange=function() {
                 /**
                  * Ako su izabrani svi dropdown-i
                  * Submit form button enabled
@@ -257,7 +257,7 @@
                 </table>
             </form>
         </div>
-        <div style="text-align: center">
+        <div style="text-align: left">
             <?php
             echo 'Partner ID: ' . $partner_zad .' racun: '. $racun_zad .' status ID: '. $status .' dat zad: '. $dat_zad .' dat val: '.
                 $dat_val .' iznos: '. $iznos_zad .' pop ID: '. $pop_tip .' pop izn: '. $pop_izn .' pop din: '. $pop_din .' tr br: '.
