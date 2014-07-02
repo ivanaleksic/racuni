@@ -4,6 +4,7 @@ body {
 }
 input {
     font-size:12px;
+    text-align: center;
 }
 .label_wide {
 	width:120px;
