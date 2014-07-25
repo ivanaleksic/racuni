@@ -79,7 +79,6 @@ function layout($page_id) {
             $(document).ready(function() {
                 $("#id_search_btn").click(function() {
                     $("#search").slideToggle();
-                    $("#sidebar_1").slideToggle();
                 });
             });
 
@@ -90,18 +89,7 @@ function layout($page_id) {
             <div id="header" style="background-color:#D8D8D8;line-height:12px;margin:0 auto;padding:6px 12px;text-align: left;">
                 <button id="id_search_btn" class="btn btn-xs btn-default">Pretraga</button>
             </div>
-            <div id="sidebar" style="background-color:#FFFFFF;overflow:auto;width:150px;float:left;text-align:left;padding:12px 12px; border-left:1px solid #D8D8D8;">
-                <a href="main.php" class="btn btn-xs btn-default">Go to Home page</a><br />
-                <br />
-                <a href="main.php?page=bills" class="btn btn-xs">Zaduženja</a><br />
-                <a href="main.php?page=new-bill" class="btn btn-xs">Novo zaduženje</a><br />
-                <a href="main.php?page=payments" class="btn btn-xs">Uplate</a><br />
-                <a href="main.php?page=new-payment" class="btn btn-xs">Nova uplata</a><br />
-                <a href="main.php?page=partners" class="btn btn-xs">Partneri</a><br />
-                <a href="main.php?page=racuni" class="btn btn-xs">Računi</a><br />
-            </div>
-
-            <div id="search" style="background-color:#D8D8D8;overflow:auto;width:950px;padding:12px 12px;border-left:1px solid #D8D8D8;border-right:1px solid #D8D8D8;display: none;">
+            <div id="search" style="background-color:#D8D8D8;overflow:auto;padding:2px 12px;border-left:1px solid #D8D8D8;border-right:1px solid #D8D8D8;display: none;">
                 <?php
                 include('includes/mysql_connect.php');
                 //query
@@ -135,6 +123,16 @@ function layout($page_id) {
                 <input type="text"  id="id_dat_do" name="dat_do" class="input_big datepicker" autocomplete="off" style="width:80px;margin-left:0px;">
                 <label>god.</label>
                 <button id="id_search_go" class="btn btn-xs btn-default">OK</button>
+            </div>
+            <div id="sidebar" style="background-color:#FFFFFF;overflow:auto;width:150px;float:left;text-align:left;padding:12px 12px; border-left:1px solid #D8D8D8;">
+                <a href="main.php" class="btn btn-xs btn-default">Go to Home page</a><br />
+                <br />
+                <a href="main.php?page=bills" class="btn btn-xs">Zaduženja</a><br />
+                <a href="main.php?page=new-bill" class="btn btn-xs">Novo zaduženje</a><br />
+                <a href="main.php?page=payments" class="btn btn-xs">Uplate</a><br />
+                <a href="main.php?page=new-payment" class="btn btn-xs">Nova uplata</a><br />
+                <a href="main.php?page=partners" class="btn btn-xs">Partneri</a><br />
+                <a href="main.php?page=racuni" class="btn btn-xs">Računi</a><br />
             </div>
             <div id="content" style="background-color:#FFFFFF;overflow:auto;width:950px;padding:12px 12px;border-left:1px solid #D8D8D8;border-right:1px solid #D8D8D8;">
 
