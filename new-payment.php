@@ -61,11 +61,15 @@
 
             document.onchange=function() {
                 /**
-                 * Ako je izabran dropdown
+                 * Ako su popunjena sva obavezna polja
                  * Submit form button enabled
                  */
                 var a = document.getElementById("id_partner_upl").value;
-                if(a != "0") {
+                var b = document.getElementById("id_racun_upl").value;
+                var c = document.getElementById("id_dat_upl").value;
+                var d = document.getElementById("id_iznos_upl").value;
+
+                if(a != "0" && b != "" && c != "" && d != "") {
                     document.getElementById("id_submit").disabled=false;
                 } else {
                     document.getElementById("id_submit").disabled=true;
@@ -75,7 +79,7 @@
         </script>
     </head>
     <body>
-        <div style="overflow:auto;height:450px;">
+        <div style="overflow:auto;height:430px;">
             <form name="unos_upl" action="includes/insert-payment.php" method="post">
                 <table id="unos_zaduzenja" style="width:340px;" cellpadding="0" cellspacing="0">
                     <th colspan="4" style="margin:0;padding:11px 0px 10px 0px;text-align:center;vertical-align: middle">
@@ -83,7 +87,7 @@
                     </th>
                     <tr>
                         <td>
-                            <label class="label_wide">Partner: </label>
+                            <label class="label_wide">Partner <span style="color: red";>*</span></label>
                         </td>
                         <td colspan="3" style="width:140px;">
                             <?php
@@ -104,7 +108,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <label class="label_wide">Broj računa: </label>
+                            <label class="label_wide">Broj računa <span style="color: red";>*</span></label>
                         </td>
                         <td colspan="3" style="width:40px;text-align: left">
                             <input type="text" id="id_racun_upl" name="racun_upl" class="input" style="width:80px;margin-left:0px;text-align:center">
@@ -112,7 +116,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <label class="label_wide">Datum uplate: </label>
+                            <label class="label_wide">Datum uplate <span style="color: red";>*</span></label>
                         </td>
                         <td colspan="3" style="width:40px;text-align: left">
                             <input type="text" id="id_dat_upl" name="dat_upl" class="input_big datepicker" autocomplete="off" style="width:80px;margin-left:0px;">
@@ -128,22 +132,23 @@
                     </tr>
                     <tr>
                         <td>
-                            <?php
-                            /*<label class="label_wide">Iznos za uplatu: </label>
+                            <label class="label_wide">Iznos za uplatu</label>
                             </td>
                             <td colspan="3" style="width:40px;">
-                                <input type="text" name="izn_za_upl" class="input" style="width:80px;margin-left:0px;text-align:right;border: none;">
-                                <!--<label class="label_s">dinara</label>-->
-                            </td>*/
+                                <input type="text" name="izn_za_upl" disabled="disabled" class="input" style="width:80px;margin-left:0px;text-align:right;border: none;" value="">
+                                <label class="label_s">din.</label>
+                            </td>
+                            <?php
+
                             ?>
                     </tr>
                     <tr>
                         <td>
-                            <label class="label_wide">Iznos uplate: </label>
+                            <label class="label_wide">Iznos uplate <span style="color: red";>*</span></label>
                         </td>
                         <td colspan="3" style="width:40px;text-align: left">
                             <input type="text" id="id_iznos_upl" name="iznos_upl" onblur="round(this)" class="input" style="width:80px;margin-left:0px;text-align:right;">
-                            <label class="label_s">dinara</label>
+                            <label class="label_s">din.</label>
                         </td>
                     </tr>
                     <tr>
@@ -160,6 +165,7 @@
             </form>
         </div>
         <div style="text-align: left">
+            <p>Polja označena sa <span style="color:red; font-weight: bold;">*</span> su obavezna.</p>
             <?php
             echo 'Partner ID: ' . $partner_upl .' racun: '. $racun_upl .' dat upl: '. $dat_upl .' iznos: '. $iznos_upl;
             ?>

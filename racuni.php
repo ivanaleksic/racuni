@@ -127,13 +127,20 @@
 
             document.onchange=function() {
                 /**
-                 * Ako su izabrani svi dropdown-i
+                 * Ako su popunjena sva obavezna polja
                  * Submit form button enabled
                  */
                 var a = document.getElementById("id_partner_zad").value;
-                var b = document.getElementById("id_status").value;
-                var c = document.getElementById("id_pop_tip").value;
-                if(a != "0" && b != "0" && c != "0") {
+                var b = document.getElementById("id_racun_zad").value;
+                var c = document.getElementById("id_status").value;
+                var d = document.getElementById("id_dat_zad").value;
+                var e = document.getElementById("id_dat_val").value;
+                var f = document.getElementById("id_iznos_zad").value;
+                var g = document.getElementById("id_pop_tip").value;
+                var h = document.getElementById("id_dat_upl").value;
+                var i = document.getElementById("id_iznos_upl").value;
+
+                if(a != "0" && b != "" && c != "0" && d != "" && e != "" && f != "" && g != "0" && h != "" && i != "" ) {
                     document.getElementById("id_submit").disabled=false;
                 } else {
                     document.getElementById("id_submit").disabled=true;
@@ -169,7 +176,7 @@ function moja_funkcija($parm)
 echo $jj;-->
 
     <body>
-        <div style="overflow:auto;height:440px;">
+        <div style="overflow:auto;height:400px;">
             <form name="insert_both" action="includes/insert.php" method="post">
                 <table id="id_tbl_zad" style="width:340px;float:left;margin-right:12px;" cellpadding="0" cellspacing="0">
                     <th colspan="4" style="margin:0;padding:11px 0px 10px 0px;text-align:center;vertical-align:middle;">
@@ -177,7 +184,7 @@ echo $jj;-->
                     </th>
                     <tr>
                         <td>
-                            <label class="label_wide">Partner: </label>
+                            <label class="label_wide">Partner <span style="color: red";>*</span></label>
                         </td>
                         <td colspan="3" style="width:140px;">
                             <?php
@@ -198,7 +205,7 @@ echo $jj;-->
                     </tr>
                     <tr>
                         <td>
-                            <label class="label_wide">Broj računa: </label>
+                            <label class="label_wide">Broj računa <span style="color: red";>*</span></label>
                         </td>
                         <td colspan="3" style="width:40px;text-align: left">
                             <input type="text" id="id_racun_zad" name="racun_zad" onchange="racun_no_ch()" class="input" style="width:80px;margin-left:0px;text-align:center;">
@@ -206,7 +213,7 @@ echo $jj;-->
                     </tr>
                     <tr>
                         <td>
-                            <label class="label_wide">Status: </label>
+                            <label class="label_wide">Status <span style="color: red";>*</span></label>
                         </td>
                         <td colspan="3" style="width:140px;">
                             <?php
@@ -226,7 +233,7 @@ echo $jj;-->
                     </tr>
                     <tr>
                         <td>
-                            <label class="label_wide">Datum zaduženja: </label>
+                            <label class="label_wide">Datum zaduženja <span style="color: red";>*</span></label>
                         </td>
                         <td colspan="3" style="width:40px;text-align: left">
                         <input type="text" id="id_dat_zad" name="dat_zad" class="input_big datepicker" autocomplete="off" style="width:80px;margin-left:0px;">
@@ -235,7 +242,7 @@ echo $jj;-->
                     </tr>
                     <tr>
                         <td>
-                            <label class="label_wide">Datum valute: </label>
+                            <label class="label_wide">Datum valute <span style="color: red";>*</span></label>
                         </td>
                         <td colspan="3" style="width:40px;text-align: left">
                         <input type="text"  id="id_dat_val" name="dat_val" class="input_big datepicker" autocomplete="off" style="width:80px;margin-left:0px;">
@@ -244,16 +251,16 @@ echo $jj;-->
                     </tr>
                     <tr>
                         <td>
-                            <label class="label_wide">Iznos zaduženja: </label>
+                            <label class="label_wide">Iznos zaduženja <span style="color: red";>*</span></label>
                         </td>
                         <td colspan="3" style="width:40px;text-align: left">
                         <input type="text" id="id_iznos_zad" name="iznos_zad" class="input"  onblur="round(this)" style="width:80px;margin-left:0px;text-align:right;">
-                        <label class="label_s">dinara</label>
+                        <label class="label_s">din.</label>
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <label class="label_wide">Tip popusta: </label>
+                            <label class="label_wide">Tip popusta <span style="color: red";>*</span></label>
                         </td>
                         <td colspan="3" style="width:140px;">
                             <?php
@@ -273,7 +280,7 @@ echo $jj;-->
                     </tr>
                     <tr>
                         <td>
-                            <label class="label_wide">Popust: </label>
+                            <label class="label_wide">Popust</label>
                         </td>
                         <td colspan="3" style="width:40px;">
                         <input type="text" id="id_pop_izn" name="pop_izn" class="input" style="width:80px;margin-left:0px;text-align:right;">
@@ -281,17 +288,17 @@ echo $jj;-->
                     </tr>
                     <tr>
                         <td>
-                            <label class="label_wide">Iznos popusta: </label>
+                            <label class="label_wide">Iznos popusta</label>
                         </td>
                         <td colspan="3" style="width:40px;">
                         <input type="text" id="id_pop_din" name="pop_din"1 onblur="round(this)" class="input" style="width:80px;margin-left:0px;text-align:right;">
-                        <label class="label_s">dinara</label>
+                        <label class="label_s">din.</label>
 
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <label class="label_wide">Broj tekućeg računa: </label>
+                            <label class="label_wide">Broj tekućeg računa</label>
                         </td>
                         <td style="width:35px;text-align: left">
                             <input type="text" id="id_tr_no1" name="tr_no1" class="input" maxlength="3" onKeyup="autotab(this, document.unos_zaduzenja.poz_no)" size="2" style="width:100%;margin-left:0px;text-align:center;">
@@ -305,7 +312,7 @@ echo $jj;-->
                     </tr>
                     <tr>
                         <td>
-                            <label class="label_wide">Model i poziv na broj: </label>
+                            <label class="label_wide">Model i poziv na broj</label>
                         </td>
                         <td style="width:35px;text-align: left">
                             <input type="text" id="id_mod_no" name="mod_no" class="input" maxlength="2" onKeyup="autotab(this, document.unos_zaduzenja.poz_no)" size="2" style="width:100%;margin-left:0px;text-align:center;">
@@ -327,7 +334,7 @@ echo $jj;-->
                     </th>
                     <tr>
                         <td>
-                            <label class="label_wide">Partner: </label>
+                            <label class="label_wide">Partner</label>
                         </td>
                         <td colspan="2" style="width:140px;">
                             <input type="text" id="id_partner_upl" name="partner_upl" class="input" disabled="disabled" style="width:100%;margin-left:0px;text-align:center;">
@@ -335,7 +342,7 @@ echo $jj;-->
                     </tr>
                     <tr>
                         <td>
-                            <label class="label_wide">Broj računa: </label>
+                            <label class="label_wide">Broj računa</label>
                         </td>
                         <td colspan="3" style="width:40px;text-align: left">
                             <input type="text" id="id_racun_upl" name="racun_upl" class="input" disabled="disabled" style="width:80px;margin-left:0px;text-align:center;">
@@ -345,11 +352,11 @@ echo $jj;-->
                     </tr>
                     <tr>
                         <td>
-                            <label class="label_wide">Datum uplate: </label>
+                            <label class="label_wide">Datum uplate <span style="color: red";>*</span></label>
                         </td>
                         <td colspan="2" style="width:140px;">
-                        <input type="text" id="id_dat_upl" name="dat_upl" class="input_big datepicker" autocomplete="off" style="width:80px;margin-left:0px;">
-                        <label class="label_s">god.</label>
+                            <input type="text" id="id_dat_upl" name="dat_upl" class="input_big datepicker" autocomplete="off" style="width:80px;margin-left:0px;">
+                            <label class="label_s">god.</label>
                         </td>
                     </tr>
                     <tr>
@@ -359,24 +366,25 @@ echo $jj;-->
                             ?>
                         </td>
                     </tr>
-                    <tr>
+                    <tr style="visibility:visible   ">
                         <td>
-                            <?php
-                            /*<label class="label_wide">Iznos za uplatu: </label>
-                            </td>
-                            <td colspan="3" style="width:40px;">
-                                <input type="text" name="izn_za_upl" class="input" style="width:80px;margin-left:0px;text-align:right;border: none;">
-                                <!--<label class="label_s">dinara</label>-->
-                            </td>*/
-                            ?>
+                            <label class="label_wide">Iznos za uplatu</label>
+                        </td>
+                        <td colspan="3" style="width:40px;">
+                            <input type="text" name="izn_za_upl" disabled="disabled" class="input" style="width:80px;margin-left:0px;text-align:right;border: none;" value="">
+                            <label class="label_s">din.</label>
+                        </td>
+                        <?php
+
+                        ?>
                     </tr>
                     <tr>
                         <td>
-                            <label class="label_wide">Iznos uplate: </label>
+                            <label class="label_wide">Iznos uplate <span style="color: red";>*</span></label>
                         </td>
                         <td colspan="2" style="width:40px;text-align: left">
-                        <input type="text" id="id_iznos_upl" name="iznos_upl" onblur="round(this)" class="input" style="width:80px;margin-left:0px;text-align:right;">
-                        <label class="label_s">dinara</label>
+                            <input type="text" id="id_iznos_upl" name="iznos_upl" onblur="round(this)" class="input" style="width:80px;margin-left:0px;text-align:right;">
+                            <label class="label_s">din.</label>
                         </td>
                     </tr>
                     <tr>
@@ -393,6 +401,7 @@ echo $jj;-->
             </form>
         </div>
         <div style="text-align: left">
+            <p>Polja označena sa <span style="color:red; font-weight: bold;">*</span> su obavezna.</p>
             <?php
             echo 'Partner ID: ' . $partner_zad .' racun: '. $racun_zad .' status ID: '. $status .' dat zad: '. $dat_zad .' dat val: '.
                 $dat_val .' iznos: '. $iznos_zad .' pop ID: '. $pop_tip .' pop izn: '. $pop_izn .' pop din: '. $pop_din .' tr br: '.
