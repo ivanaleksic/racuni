@@ -59,7 +59,7 @@
                 document.getElementById("id_submit").disabled=true;
             }
 
-            document.onchange=function() {
+            document.onkeyup=function() {
                 /**
                  * Ako su popunjena sva obavezna polja
                  * Submit form button enabled

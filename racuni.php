@@ -125,7 +125,7 @@
                 document.getElementById("id_submit").disabled=true;
             };
 
-            document.onchange=function() {
+            document.onkeyup=function() {
                 /**
                  * Ako su popunjena sva obavezna polja
                  * Submit form button enabled
@@ -146,6 +146,18 @@
                     document.getElementById("id_submit").disabled=true;
                 }
             }
+
+            function popust_change(sel) {
+                /**
+                 * Ako ima popusta...
+                 */
+                if(sel > 1) {
+                    $(".pop_col").show();
+                } else {
+                    $(".pop_col").hide();
+                }
+            }
+
             function tekuci_rn() {
                 var str = "265-435382000-63";
                 var a = str.indexOf("-") + 1;
@@ -268,7 +280,7 @@ echo $jj;-->
                             //query
                             $sql=mysql_query("SELECT id, pop_tip FROM popusti");
                             if(mysql_num_rows($sql)) {
-                                $select= '<select id="id_pop_tip" name="pop_tip" class="select_big" style="width:100%;display: inline-block;font-size:12px;margin-left:0px;">';
+                                $select= '<select id="id_pop_tip" name="pop_tip" class="select_big" onchange="popust_change(this.value)" style="width:100%;display: inline-block;font-size:12px;margin-left:0px;">';
                                 while($rs=mysql_fetch_array($sql)) {
                                     $select.='<option value='.$rs['id'].'>'.$rs['pop_tip'].'</option>';
                                 }
@@ -278,7 +290,7 @@ echo $jj;-->
                             ?>
                         </td>
                     </tr>
-                    <tr>
+                    <tr class="pop_col" style="display: none;">
                         <td>
                             <label class="label_wide">Popust</label>
                         </td>
@@ -286,7 +298,7 @@ echo $jj;-->
                         <input type="text" id="id_pop_izn" name="pop_izn" class="input" style="width:80px;margin-left:0px;text-align:right;">
                         </td>
                     </tr>
-                    <tr>
+                    <tr class="pop_col" style="display: none;">
                         <td>
                             <label class="label_wide">Iznos popusta</label>
                         </td>
