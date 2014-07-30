@@ -97,6 +97,7 @@
 
                             if(mysql_num_rows($sql)) {
                                 $select= '<select id="id_partner_upl" name="partner_upl" class="select_big" autofocus="1" style="width:100%;display: inline-block;font-size:12px;margin-left:0px;">';
+                                $select.='<option value="0" disabled selected style="display:none;">--- izaberi partnera ---</option>';
                                 while( $rs=mysql_fetch_array($sql)) {
                                     $select.='<option value='.$rs['id'].'>'.$rs['naziv'].'</option>';
                                 }

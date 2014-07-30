@@ -97,6 +97,7 @@ function layout($page_id) {
 
                 if(mysql_num_rows($sql)) {
                     $select= '<select id="id_partner_search" name="partner_search" onclick="is_selected(this);" class="select_big" autofocus="1" style="width:150px; height: 22px; font-size:12px;">';
+                    $select.='<option value="0" disabled selected style="display:none;">--- izaberi partnera ---</option>';
                     while( $rs=mysql_fetch_array($sql)) {
                         $select.='<option value='.$rs['id'].'>'.$rs['naziv'].'</option>';
                     }
@@ -104,19 +105,16 @@ function layout($page_id) {
                 $select.='</select>';
                 echo $select;
                 ?>
-                <?php
-                include('includes/mysql_connect.php');
-                $sql=mysql_query("SELECT id, status FROM statusi");
-                //query
-                if(mysql_num_rows($sql)) {
-                    $select= '<select id="id_status_search" name="status_search" class="select_big" style="width:180px; height: 22px; font-size:12px;">';
-                    while( $rs=mysql_fetch_array($sql)) {
-                        $select.='<option value='.$rs['id'].'>'.$rs['status'].'</option>';
-                    }
-                }
-                $select.='</select>';
-                echo $select;
-                ?>
+                <select id="id_status_search"  name="status_search" class="select_big" style="width:180px; height: 22px; font-size:12px;">';
+                    <option value="0" disabled selected style="display:none;">--- izaberi status računa ---</option>';
+                    <option value="1">Svi računi</option>';
+                    <option value="2">Neplaćeni računi</option>';
+                    <option value="3">Neplaćeni u valuti</option>';
+                    <option value="4">Neplaćeni sa kašnjenjem</option>';
+                    <option value="5">Plaćeni računi</option>';
+                    <option value="6">Plaćeni u valuti</option>';
+                    <option value="7">Plaćeni sa kašnjenjem</option>';
+                </select>';
                 <label>Od:</label>
                 <input type="text"  id="id_dat_od" name="dat_od" class="input_big datepicker" autocomplete="off" style="width:80px;margin-left:0px;">
                 <label>do:</label>
@@ -125,7 +123,7 @@ function layout($page_id) {
                 <button id="id_search_go" class="btn btn-xs btn-default">OK</button>
             </div>
             <div id="sidebar" style="background-color:#FFFFFF;overflow:auto;width:150px;float:left;text-align:left;padding:12px 12px; border-left:1px solid #D8D8D8;">
-                <a href="main.php" class="btn btn-xs btn-default">Go to Home page</a><br />
+                <a href="main.php" class="btn btn-xs btn-default">Home Page</a><br />
                 <br />
                 <a href="main.php?page=bills" class="btn btn-xs">Zaduženja</a><br />
                 <a href="main.php?page=new-bill" class="btn btn-xs">Novo zaduženje</a><br />
@@ -140,7 +138,7 @@ function layout($page_id) {
                 if(isset($_GET['page']))
                 {
                     $page_id = $_GET['page']; //Get the request URL
-                    layout($page_id); //Call the function with the argument
+                    layout($page_id); //Pozivanje funkcije sa argumentom
                 }
                 ?>
             </div>

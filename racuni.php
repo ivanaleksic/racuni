@@ -206,6 +206,7 @@ echo $jj;-->
 
                             if(mysql_num_rows($sql)) {
                                 $select= '<select id="id_partner_zad" name="partner_zad" onchange="partner_ch()" class="select_big" autofocus="1" style="width:100%;display: inline-block;font-size:12px;margin-left:0px;">';
+                                $select.='<option value="0" disabled selected style="display:none;">--- izaberi partnera ---</option>';
                                 while( $rs=mysql_fetch_array($sql)) {
                                     $select.='<option value='.$rs['id'].'>'.$rs['naziv'].'</option>';
                                 }
@@ -234,6 +235,7 @@ echo $jj;-->
                             $sql=mysql_query("SELECT id, status FROM statusi");
                             if(mysql_num_rows($sql)) {
                                 $select= '<select id="id_status" name="status" class="select_big" style="width:100%;display: inline-block;font-size:12px;margin-left:0px;">';
+                                $select.='<option value="0" disabled selected style="display:none;">--- izaberi status računa ---</option>';
                                 while($rs=mysql_fetch_array($sql)) {
                                     $select.='<option value='.$rs['id'].'>'.$rs['status'].'</option>';
                                 }
@@ -281,6 +283,7 @@ echo $jj;-->
                             $sql=mysql_query("SELECT id, pop_tip FROM popusti");
                             if(mysql_num_rows($sql)) {
                                 $select= '<select id="id_pop_tip" name="pop_tip" class="select_big" onchange="popust_change(this.value)" style="width:100%;display: inline-block;font-size:12px;margin-left:0px;">';
+                                $select.='<option value="0" disabled selected style="display:none;">--- izaberi tip popusta ---</option>';
                                 while($rs=mysql_fetch_array($sql)) {
                                     $select.='<option value='.$rs['id'].'>'.$rs['pop_tip'].'</option>';
                                 }
