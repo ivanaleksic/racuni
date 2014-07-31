@@ -18,7 +18,7 @@
             z-index:15;
             top:35%;
             left:50%;
-            margin:-100px 0 0 -150px;
+            margin:-100px 0 0 -175px;
             background: white
         }
         .login-form{

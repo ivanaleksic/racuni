@@ -35,8 +35,8 @@ function layout($page_id) {
         case 'racuni':
             include('racuni.php');
             break;
-        case 'partners':
-            include('includes/partners.php');
+        case 'main': //Main page
+            echo '<h4>Table with bills to be paid will be inserted here...</h4>';
     }
 }
 ?>
@@ -131,6 +131,8 @@ function layout($page_id) {
                 <a href="main.php?page=new-payment" class="btn btn-xs">Nova uplata</a><br />
                 <a href="main.php?page=partners" class="btn btn-xs">Partneri</a><br />
                 <a href="main.php?page=racuni" class="btn btn-xs">Računi</a><br />
+                <br />
+                <a href="logout.php" class="btn btn-xs btn-default">Log out</a><br />
             </div>
             <div id="content" style="background-color:#FFFFFF;overflow:auto;width:950px;padding:12px 12px;border-left:1px solid #D8D8D8;border-right:1px solid #D8D8D8;">
 
@@ -139,6 +141,8 @@ function layout($page_id) {
                 {
                     $page_id = $_GET['page']; //Get the request URL
                     layout($page_id); //Pozivanje funkcije sa argumentom
+                } else {
+                    layout("main"); //Main strana
                 }
                 ?>
             </div>

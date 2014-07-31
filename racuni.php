@@ -153,39 +153,34 @@
                  */
                 if(sel > 1) {
                     $(".pop_col").show();
+                    document.getElementById("id_pop_izn").focus();
                 } else {
                     $(".pop_col").hide();
+                    document.getElementById("id_tr_no1").focus();
                 }
             }
 
-            function tekuci_rn() {
+/*            function tekuci_rn() {
                 var str = "265-435382000-63";
                 var a = str.indexOf("-") + 1;
                 var b = str.lastIndexOf("-");
                 var c = str.substring(a, b);
                 document.getElementById("demo").innerHTML = c;
-            }
+            }*/
 
         </script>
     </head>
 
 <?php
-/*$racun_no_upl = $_SESSION['racun_no'];
-$dat_upl = $_SESSION['dat_upl'];
-$iznos_upl = $_SESSION['iznos_upl'];
-    <script type="text/javascript">
-    function upis_u_form_upis($racun_no_upl,$dat_upl,$iznos_upl) {
-        document.getElementsByName('dat_upl').value = $iznos_upl;
-
+/*    function moja_funkcija($parm)
+    {
+        return 'Moja funkcija koja se zove '.$parm;
     }
-function moja_funkcija($parm)
-{
-    return 'Moja funkcija koja se zove '.$parm;
-}
-*/?>
 
-<!--$jj=moja_funkcija('idemo kuci');
-echo $jj;-->
+    $jj=moja_funkcija('idemo kuci');
+    echo $jj;*/
+?>
+
 
     <body>
         <div style="overflow:auto;height:400px;">
@@ -316,10 +311,10 @@ echo $jj;-->
                             <label class="label_wide">Broj tekućeg računa</label>
                         </td>
                         <td style="width:35px;text-align: left">
-                            <input type="text" id="id_tr_no1" name="tr_no1" class="input" maxlength="3" onKeyup="autotab(this, document.unos_zaduzenja.poz_no)" size="2" style="width:100%;margin-left:0px;text-align:center;">
+                            <input type="text" id="id_tr_no1" name="tr_no1" class="input" maxlength="3" size="2" style="width:100%;margin-left:0px;text-align:center;">
                         </td>
                         <td style="width:106px;text-align: left">
-                            <input type="text" id="id_tr_no2" name="tr_no2" class="input" onKeyup="autotab(this, document.unos_zad.poz_no)" size="2" style="width:100%;margin-left:0px;text-align:center;">
+                            <input type="text" id="id_tr_no2" name="tr_no2" class="input" size="2" style="width:100%;margin-left:0px;text-align:center;">
                         </td>
                         <td style="width:35px;text-align: right">
                             <input type="text" id="id_tr_no3" name="tr_no3" class="input"  maxlength="2" style="width:100%;margin-left:0px;text-align:center;">
@@ -330,7 +325,7 @@ echo $jj;-->
                             <label class="label_wide">Model i poziv na broj</label>
                         </td>
                         <td style="width:35px;text-align: left">
-                            <input type="text" id="id_mod_no" name="mod_no" class="input" maxlength="2" onKeyup="autotab(this, document.unos_zaduzenja.poz_no)" size="2" style="width:100%;margin-left:0px;text-align:center;">
+                            <input type="text" id="id_mod_no" name="mod_no" class="input" maxlength="2" size="2" style="width:100%;margin-left:0px;text-align:center;">
                         </td>
                         <td colspan="2" style="text-align: right">
                             <input type="text" id="id_poz_no" name="poz_no" class="input" style="width:100%;margin-left:0px;text-align:center;">

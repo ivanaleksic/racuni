@@ -8,7 +8,7 @@ if ($_SESSION['session'] > $_SESSION['inactive']) {
 } else {
     include('includes/mysql_connect.php');
     //query
-    $sql = mysql_query("SELECT * FROM partneri WHERE id > 0");
+    $sql = mysql_query("SELECT * FROM partneri");
     echo "<table id='tbl_partneri' class='odd_even_table'>";
     echo "<tr>
         <th>ID</th>
