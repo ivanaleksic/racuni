@@ -50,22 +50,7 @@
                 window.location.href = url;
             }
 
-            function popUp(url) {
-                var width  = 650;
-                var height = 400;
-                var left = (screen.width - 650) / 2;
-                var top    = 200;
-                var params = 'width='+width+', height='+height;
-                params += ', top='+top+', left='+left;
-                params += ', directories=no';
-                params += ', location=no';
-                params += ', menubar=yes';
-                params += ', resizable=no';
-                params += ', scrollbars=no';
-                params += ', status=no';
-                params += ', toolbar=no';
-                window.open(url,'PHP Pop Up',params);
-            }
+
 
             function round(box) {
                 /*Fiksiranje na dve decimale*/
@@ -125,7 +110,7 @@
                 document.getElementById("id_submit").disabled=true;
             };
 
-            document.onkeyup=function() {
+            document.onkeyup = function () {
                 /**
                  * Ako su popunjena sva obavezna polja
                  * Submit form button enabled
@@ -140,12 +125,12 @@
                 var h = document.getElementById("id_dat_upl").value;
                 var i = document.getElementById("id_iznos_upl").value;
 
-                if(a != "0" && b != "" && c != "0" && d != "" && e != "" && f != "" && g != "0" && h != "" && i != "" ) {
-                    document.getElementById("id_submit").disabled=false;
+                if (a != "0" && b != "" && c != "0" && d != "" && e != "" && f != "" && g != "0" && h != "" && i != "") {
+                    document.getElementById("id_submit").disabled = false;
                 } else {
-                    document.getElementById("id_submit").disabled=true;
+                    document.getElementById("id_submit").disabled = true;
                 }
-            }
+            };
 
             function popust_change(sel) {
                 /**
@@ -347,7 +332,7 @@
                             <label class="label_wide">Partner</label>
                         </td>
                         <td colspan="2" style="width:140px;">
-                            <input type="text" id="id_partner_upl" name="partner_upl" class="input" disabled="disabled" style="width:100%;margin-left:0px;text-align:center;">
+                            <input type="text" id="id_partner_upl" name="partner_upl" class="input" style="width:100%;margin-left:0px;text-align:left;border:none;">
                         </td>
                     </tr>
                     <tr>
@@ -355,7 +340,7 @@
                             <label class="label_wide">Broj računa</label>
                         </td>
                         <td colspan="3" style="width:40px;text-align: left">
-                            <input type="text" id="id_racun_upl" name="racun_upl" class="input" disabled="disabled" style="width:80px;margin-left:0px;text-align:center;">
+                            <input type="text" id="id_racun_upl" name="racun_upl" class="input" disabled style="width:80px;margin-left:0px;text-align:center;border:none;">
                         </td>
                     </tr>
                     <tr>
@@ -381,7 +366,7 @@
                             <label class="label_wide">Iznos za uplatu</label>
                         </td>
                         <td colspan="3" style="width:40px;">
-                            <input type="text" name="izn_za_upl" disabled="disabled" class="input" style="width:80px;margin-left:0px;text-align:right;border: none;" value="">
+                            <input type="text" name="izn_za_upl" disabled class="input" style="width:80px;margin-left:0px;text-align:right;border: none;" value="">
                             <label class="label_s">din.</label>
                         </td>
                         <?php
@@ -426,7 +411,6 @@
 
             <input type=button onClick="parent.location='partneri.php'" value='parent button'>
             <input type=button onClick="location.href='partneri.php'" value='href button'>
-            <input type="button" value="PopUp" onclick="popUp('partneri.php');" />
             <input type="button" value="Redirect" onclick="Partneri('partneri.php')" />
             <br/>
             <form action="partneri.php">

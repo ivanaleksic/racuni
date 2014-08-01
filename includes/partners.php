@@ -1,11 +1,11 @@
 <?php
-$_SESSION['session'] = time() - $_SESSION['time'];
+/*$_SESSION['session'] = time() - $_SESSION['time'];
 if ($_SESSION['session'] > $_SESSION['inactive']) {
     session_destroy();
     echo '<script type="text/javascript">window.opener.location.href="../login.php";window.close();</script>';
     echo '<script type="text/javascript">self.close();</script>';
     exit();
-} else {
+} else {*/
     include('includes/mysql_connect.php');
     //query
     $sql = mysql_query("SELECT * FROM partneri");
@@ -41,5 +41,4 @@ if ($_SESSION['session'] > $_SESSION['inactive']) {
         }
     }
     echo "</table>";
-}
 ?>

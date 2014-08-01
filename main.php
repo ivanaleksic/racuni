@@ -1,24 +1,17 @@
 <?php
-session_start();
-include('timeout.php');
-if(is_timeout()){
-    session_destroy();
-    header("location:login.php");
-} else {
-    $_SESSION['time'] = time();
-}
-?>
-
-<?php
+    session_start();
+    include('timeout.php');
+    if(is_timeout()){
+        session_destroy();
+        header("location:login.php");
+    } else {
+        $_SESSION['time'] = time();
+    }
 
 function layout($page_id) {
     switch($page_id) {
         default: //Default, kada page_id nije ispravan
-            echo '<h3>Welcome to the home page</h3>';
-            echo '<p>This is the home page...</p>';
-        case '': //Kada je prazno
-            echo '<h3>Under construction...</h3>';
-            echo '<p></p>';
+            include('includes/error 404.html');
             break;
         case 'bills':
             include('includes/bills.php');
@@ -32,11 +25,14 @@ function layout($page_id) {
         case 'new-payment':
             include('new-payment.php');
             break;
+        case 'partners':
+            include('includes/partners.php');
+            break;
         case 'racuni':
             include('racuni.php');
             break;
         case 'main': //Main page
-            echo '<h4>Table with bills to be paid will be inserted here...</h4>';
+            echo '<h4>Table with latest bills will be inserted here...</h4>';
     }
 }
 ?>
@@ -82,6 +78,33 @@ function layout($page_id) {
                 });
             });
 
+            setInterval(function() {
+
+            /*  var confirmed = window.confirm(text);
+
+                 if (confirmed) {
+                 location.href = '';
+                 } else {
+                 location.href = 'logout.php';
+                 }*/
+
+                var text = 'Sesija će isteći za manje od 30 sekundi.\nDa li želiš da je produžiš?';
+                window.alert(text);
+                window.location = '';
+            }, 270000);
+
+/*            setInterval(function(){
+                window.location = 'logout.php';
+            }, 300000);*/
+
+
+            function session_timeout() {
+                var t_session = <?php echo $_SESSION['session']?>;
+                var t_inactive = <?php echo $_SESSION['inactive']?>;
+                var t_time = <?php echo $_SESSION['time']?>;
+                var t = 10;
+            }
+
         </script>
     </head>
     <body>
@@ -122,7 +145,7 @@ function layout($page_id) {
                 <label>god.</label>
                 <button id="id_search_go" class="btn btn-xs btn-default">OK</button>
             </div>
-            <div id="sidebar" style="background-color:#FFFFFF;overflow:auto;width:150px;float:left;text-align:left;padding:12px 12px; border-left:1px solid #D8D8D8;">
+            <div id="sidebar" style="background-color:#FFFFFF;overflow:auto;width:150px;float:left;text-align:left;padding:12px 12px;border-left:1px solid #D8D8D8;">
                 <a href="main.php" class="btn btn-xs btn-default">Home Page</a><br />
                 <br />
                 <a href="main.php?page=bills" class="btn btn-xs">Zaduženja</a><br />
@@ -132,7 +155,7 @@ function layout($page_id) {
                 <a href="main.php?page=partners" class="btn btn-xs">Partneri</a><br />
                 <a href="main.php?page=racuni" class="btn btn-xs">Računi</a><br />
                 <br />
-                <a href="logout.php" class="btn btn-xs btn-default">Log out</a><br />
+                <a href="logout.php" class="btn btn-xs btn-default">Log out</a>
             </div>
             <div id="content" style="background-color:#FFFFFF;overflow:auto;width:950px;padding:12px 12px;border-left:1px solid #D8D8D8;border-right:1px solid #D8D8D8;">
 

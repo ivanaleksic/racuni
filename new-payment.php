@@ -25,7 +25,7 @@
         <script type="text/javascript">
             $(function() {
                 $(".datepicker").datepicker({
-                    dateFormat: "dd.mm.yy."/*"yy-mm-dd"*/,
+                    dateFormat: "dd.mm.yy.",
                     changeMonth: true,
                     changeYear: true,
                     yearRange: '-15:+15' }).val()
@@ -136,7 +136,7 @@
                             <label class="label_wide">Iznos za uplatu</label>
                             </td>
                             <td colspan="3" style="width:40px;">
-                                <input type="text" name="izn_za_upl" disabled="disabled" class="input" style="width:80px;margin-left:0px;text-align:right;border: none;" value="">
+                                <input type="text" name="izn_za_upl" disabled class="input" style="width:80px;margin-left:0px;text-align:right;border:none;" value="">
                                 <label class="label_s">din.</label>
                             </td>
                             <?php

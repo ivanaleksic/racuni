@@ -9,6 +9,9 @@
         if(mysql_num_rows($sql) == 1) {
             $row = mysql_fetch_array($sql);
             session_start();
+            // Postavljanje username-a i timeout vremena
+            $_SESSION['username'] = $row['username'];
+            $_SESSION['inactive'] = 300;
             // Brisanje session unos_zad form podataka
             $_SESSION['partner_zad'] = "0";
             $_SESSION['racun_zad'] = "";
@@ -29,9 +32,6 @@
             $_SESSION['racun_upl'] = "";
             $_SESSION['dat_upl'] = "";
             $_SESSION['iznos_upl'] =  "";
-            // Postavljanje username-a i timeout vremena
-            $_SESSION['username'] = $row['username'];
-            $_SESSION['inactive'] = 300;
             $_SESSION['time'] = time(); // Vreme starta sesije = Trenutno vreme
             header("Location: main.php"); // Ako sesija nije istekla
             exit;
