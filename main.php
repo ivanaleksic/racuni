@@ -32,7 +32,7 @@ function layout($page_id) {
             include('racuni.php');
             break;
         case 'main': //Main page
-            echo '<h4>Table with latest bills will be inserted here...</h4>';
+            include('includes/bills-to-pay.php');
     }
 }
 ?>
@@ -40,6 +40,7 @@ function layout($page_id) {
 <!DOCTYPE html>
 <html lang="sr" xmlns="http://www.w3.org/1999/html">
     <head>
+        <title>Računi 2014.</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 
         <script src="//code.jquery.com/jquery-1.10.2.js"></script>
@@ -176,7 +177,6 @@ function layout($page_id) {
                 <a href="logout.php" class="btn btn-xs btn-default">Log out</a>
             </div>
             <div id="content" style="background-color:#FFFFFF;overflow:auto;width:950px;padding:12px 12px;border-left:1px solid #D8D8D8;border-right:1px solid #D8D8D8;">
-
                 <?php
                 if(isset($_GET['page']))
                 {

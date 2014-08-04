@@ -152,11 +152,10 @@
                             <label class="label_s">din.</label>
                         </td>
                     </tr>
+                    <td colspan="4" class>
+                        <label class="label_wide" style="width:100%;font-size:11px;font-weight:normal;">Polja označena sa <span style="color:red; font-weight: bold;">*</span> su obavezna.</label>
+                    </td>
                     <tr>
-                        <td colspan="4" style="text-align: center">
-                            <br/>
-                        </td>
-                    </tr>
                     <tr>
                         <td colspan="4" style="text-align: center">
                             <input type="submit" id="id_submit" class="btn btn-xs btn-success" value="Sačuvaj"> <input type="reset" class="btn btn-xs btn-danger" value="Poništi">
@@ -166,7 +165,6 @@
             </form>
         </div>
         <div style="text-align: left">
-            <p>Polja označena sa <span style="color:red; font-weight: bold;">*</span> su obavezna.</p>
             <?php
             echo 'Partner ID: ' . $partner_upl .' racun: '. $racun_upl .' dat upl: '. $dat_upl .' iznos: '. $iznos_upl;
             ?>
