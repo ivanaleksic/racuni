@@ -1,4 +1,3 @@
-
 <?php
 /**
  *
@@ -407,15 +406,9 @@
             echo 'Partner ID: ' . $partner_zad .' racun: '. $racun_zad .' dat upl: '. $dat_upl .' iznos: '. $iznos_upl;
             ?>
         <!--
-            <input type="button" class="btn btn-xs btn-success" value="Sačuvaj sve" onClick="submit_oba()"> <input type="button" class="btn btn-xs btn-danger" value="Poništi sve" onClick="clear_oba()">
-
             <input type=button onClick="parent.location='partneri.php'" value='parent button'>
             <input type=button onClick="location.href='partneri.php'" value='href button'>
             <input type="button" value="Redirect" onclick="Partneri('partneri.php')" />
-            <br/>
-            <form action="partneri.php">
-                <input type="submit" value="Partneri">
-            </form>
             <br/>
             <input type=button onClick="parent.location='home.php'" value='Home page'>
         -->
