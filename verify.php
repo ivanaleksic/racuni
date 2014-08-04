@@ -36,7 +36,7 @@
             header("Location: main.php"); // Ako sesija nije istekla
             exit;
         } else {
-            header("Location: login.php"); //Ako je sesija istekla, idi na login stranu
+            header("Location: login.html"); //Ako je sesija istekla, idi na login stranu
             exit;
         }
     } else {    //Ako nije bilo submita forma, idi na login stranu

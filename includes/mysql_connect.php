@@ -1,6 +1,6 @@
  <?php
     $dbHost = "localhost";
-    $dbUser = "root"; 
+    $dbUser = "root";
     $dbPass = "";
     $dbDatabase = "racuni";
     

@@ -261,7 +261,7 @@
                             //query
                             $sql=mysql_query("SELECT id, pop_tip FROM popusti");
                             if(mysql_num_rows($sql)) {
-                                $select= '<select id="id_pop_tip" name="pop_tip" class="select_big" onchange="popust_change(this.value)" style="width:100%;display: inline-block;font-size:12px;margin-left:0px;">';
+                                $select= '<select id="id_pop_tip" name="pop_tip" class="select_big" onblur="popust_change(this.value)" style="width:100%;display: inline-block;font-size:12px;margin-left:0px;">';
                                 $select.='<option value="0" disabled selected style="display:none;">--- izaberi tip popusta ---</option>';
                                 while($rs=mysql_fetch_array($sql)) {
                                     $select.='<option value='.$rs['id'].'>'.$rs['pop_tip'].'</option>';

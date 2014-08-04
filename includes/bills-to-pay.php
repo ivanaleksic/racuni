@@ -22,7 +22,7 @@ echo "<tr >
     </td>";
 if(mysql_num_rows($sql)) {
     while($row = mysql_fetch_assoc($sql)) {
-        if (date('d.m.Y', strtotime($row['dat_val'])) <= date('d.m.Y', strtotime('today'))) {
+        if (strtotime($row['dat_val']) <= strtotime('today')) {
             $racun_no = $row['racun_no'];
             $naziv = $row['naziv'];
             $status = $row['status'];

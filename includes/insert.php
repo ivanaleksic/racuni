@@ -10,7 +10,6 @@ include('mysqli_connect.php');
 //Upis u zaduzenja
 
 $dat_izm = date("Y-m-d H:i:s");
-/*    $dat_izm = mysqli_real_escape_string($con, $_POST['dat_izm']);*/
 $partner_zad = mysqli_real_escape_string($con, $_POST['partner_zad']);
 $racun_zad = mysqli_real_escape_string($con, $_POST['racun_zad']);
 $status = mysqli_real_escape_string($con, $_POST['status']);

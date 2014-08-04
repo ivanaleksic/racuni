@@ -3,7 +3,7 @@
     include('timeout.php');
     if(is_timeout()){
         session_destroy();
-        header("location:login.php");
+        header("location:login.html");
     } else {
         $_SESSION['time'] = time();
     }
