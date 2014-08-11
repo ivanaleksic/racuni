@@ -9,8 +9,8 @@ $sql = mysql_query("select zaduzenja.*,partneri.naziv, statusi.status, popusti.p
 echo "<table id='tabela' class='odd_even_table'>";
 echo "<tr >
     <th style='width:60px;text-align: center;'>Račun No.</th>
-    <th style='width:110px;text-align: center;'>Korisnik</th>
-    <th style='width:110px;text-align: center;'>Status</th>
+    <th style='width:120px;text-align: center;'>Korisnik</th>
+    <th style='width:120px;text-align: center;'>Status</th>
     <th style='width:65px;text-align: center;'>Datum zaduženja</th>
     <th style='width:65px;text-align: center;'>Datum valute</th>
     <th style='width:50px;text-align: center;'>Iznos zaduženja</th>
